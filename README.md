@@ -71,15 +71,15 @@ The COH is pleased to announce the following judges for Chapter 1, Season 4:
 
 ## **Important Dates**
 
-**1/2** – Registration Ongoing at [**thecoh.build**](https://thecoh.build)
-**1/2** – Begin Building, Communicate in [**the COH chat**](https://t.me/+aXvNO-ZcrWZjYTIx). 
-**1/5** – The Elevator, 630pm-730pm UTC, [**Save Your Spot**](https://crowdcast.io/c/s4elevator)
-The Elevator is a project pitch session: your chance to pitch your idea(s) to fellow builders and Canto mentors. Get direct feedback, learn about potential projects, and grow your team. 
-**1/10** – [**Midpoint Check.**](https://form.jotform.com/223616162896160) Share Project Title, Summary, & Progress Update with COH organizers. 
-**1/20** – [**Projects Due.** ](https://form.jotform.com/223616580721151)Must submit pre-recorded video and PR to this repo by 11:59pm UTC.
-**1/22** – [**Judging Ceremony** ](https://www.crowdcast.io/c/thecoh-s4) at 6pm UTC.
-**1/23-24** – Winners Announced (TBD)
-
+**1/2** – Registration Ongoing at [**thecoh.build**](https://thecoh.build)  
+**1/2** – Begin Building, Communicate in [**the COH chat**](https://t.me/+aXvNO-ZcrWZjYTIx).  
+**1/5** – The Elevator, 630pm-730pm UTC, [**Save Your Spot**](https://crowdcast.io/c/s4elevator)  
+The Elevator is a project pitch session: your chance to pitch your idea(s) to fellow builders and Canto mentors. Get direct feedback, learn about potential projects, and grow your team.  
+**1/10** – [**Midpoint Check.**](https://form.jotform.com/223616162896160) Share Project Title, Summary, & Progress Update with COH organizers.  
+**1/20** – [**Projects Due.** ](https://form.jotform.com/223616580721151)Must submit pre-recorded video and PR to this repo by 11:59pm UTC.  
+**1/22** – [**Judging Ceremony** ](https://www.crowdcast.io/c/thecoh-s4) at 6pm UTC.  
+**1/23-24** – Winners Announced (TBD)  
+  
 ## **Project Requirements** ## 
 
 **Teams must submit a PR to this repo before 11:59pm UTC on 1/20.** 
