@@ -1,0 +1,1152 @@
+{
+  "address": "0x9bbb4217115B7296630183Bb23703DEC93E8edCf",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string[]",
+          "name": "_urls",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidOwnership",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidSignature",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "string[]",
+          "name": "urls",
+          "type": "string[]"
+        },
+        {
+          "internalType": "bytes",
+          "name": "callData",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes4",
+          "name": "callbackFunction",
+          "type": "bytes4"
+        },
+        {
+          "internalType": "bytes",
+          "name": "extraData",
+          "type": "bytes"
+        }
+      ],
+      "name": "OffchainLookup",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Unauthorized",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "authorized",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "length",
+          "type": "uint256"
+        }
+      ],
+      "name": "Session",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "DelegationRegistry",
+      "outputs": [
+        {
+          "internalType": "contract IDelegationRegistry",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_domainSeparatorV4",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "signer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "authorizer",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nftChainId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "nftContract",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "createMessage",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "authorized",
+          "type": "address"
+        }
+      ],
+      "name": "createSession",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "authorizer",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "nftContract",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nftTokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nftChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "targetChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "gas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IForwardRequest.ERC721ForwardRequest",
+          "name": "req",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        }
+      ],
+      "name": "execute",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "response",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "extraData",
+          "type": "bytes"
+        }
+      ],
+      "name": "executeWithProof",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getChainId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        }
+      ],
+      "name": "getNonce",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "vault",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "delegate",
+          "type": "address"
+        }
+      ],
+      "name": "isAuthorized",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ownershipSigner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "authorizer",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "nftContract",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nftTokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nftChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "targetChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "gas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IForwardRequest.ERC721ForwardRequest",
+          "name": "req",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        }
+      ],
+      "name": "preflight",
+      "outputs": [],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "registry",
+          "type": "address"
+        }
+      ],
+      "name": "setDelegationRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newSigner",
+          "type": "address"
+        }
+      ],
+      "name": "setOwnershipSigner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "urls",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "authorizer",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "nftContract",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nftTokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nftChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "targetChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "gas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IForwardRequest.ERC721ForwardRequest",
+          "name": "req",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        }
+      ],
+      "name": "verify",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "authorizer",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "nftContract",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nftTokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nftChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "targetChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "gas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IForwardRequest.ERC721ForwardRequest",
+          "name": "req",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "verifyOwnershipProof",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xce3d8fdcd4f3d006f217c4e8f7a5ae46d17e62aa7f30fde1577918f380133614",
+  "receipt": {
+    "to": null,
+    "from": "0x2cE6BD653220436eB8f35E146B0Dd1a6013E97a7",
+    "contractAddress": "0x9bbb4217115B7296630183Bb23703DEC93E8edCf",
+    "transactionIndex": 0,
+    "gasUsed": "2083011",
+    "logsBloom": "0x00000004000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000020000000000000000000000000000000020000000000000000000800000000000000000800000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000001010000000000000000000000004000000000000000000000000000000000100000000000020000000000000000200000000000000000000000000000000000000000000000000",
+    "blockHash": "0x4e286385db843892071ccff8412488083a6de681e7adc41c3e53fc45995670ea",
+    "transactionHash": "0xce3d8fdcd4f3d006f217c4e8f7a5ae46d17e62aa7f30fde1577918f380133614",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 2859971,
+        "transactionHash": "0xce3d8fdcd4f3d006f217c4e8f7a5ae46d17e62aa7f30fde1577918f380133614",
+        "address": "0x9bbb4217115B7296630183Bb23703DEC93E8edCf",
+        "topics": [
+          "0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000002ce6bd653220436eb8f35e146b0dd1a6013e97a7",
+          "0x0000000000000000000000002ce6bd653220436eb8f35e146b0dd1a6013e97a7"
+        ],
+        "data": "0x",
+        "logIndex": 0,
+        "blockHash": "0x4e286385db843892071ccff8412488083a6de681e7adc41c3e53fc45995670ea"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 2859971,
+        "transactionHash": "0xce3d8fdcd4f3d006f217c4e8f7a5ae46d17e62aa7f30fde1577918f380133614",
+        "address": "0x9bbb4217115B7296630183Bb23703DEC93E8edCf",
+        "topics": [
+          "0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d",
+          "0xa49807205ce4d355092ef5a8a18f56e8913cf4a201fbe287825b095693c21775",
+          "0x0000000000000000000000002ce6bd653220436eb8f35e146b0dd1a6013e97a7",
+          "0x0000000000000000000000002ce6bd653220436eb8f35e146b0dd1a6013e97a7"
+        ],
+        "data": "0x",
+        "logIndex": 1,
+        "blockHash": "0x4e286385db843892071ccff8412488083a6de681e7adc41c3e53fc45995670ea"
+      }
+    ],
+    "blockNumber": 2859971,
+    "cumulativeGasUsed": "2083011",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    [
+      "https://middleware.nfight.xyz/"
+    ]
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "27d04a5b48bcc44cad3fbea4b53bdfa5",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string[]\",\"name\":\"_urls\",\"type\":\"string[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"InvalidOwnership\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidSignature\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"string[]\",\"name\":\"urls\",\"type\":\"string[]\"},{\"internalType\":\"bytes\",\"name\":\"callData\",\"type\":\"bytes\"},{\"internalType\":\"bytes4\",\"name\":\"callbackFunction\",\"type\":\"bytes4\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"name\":\"OffchainLookup\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Unauthorized\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"authorized\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"Session\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DelegationRegistry\",\"outputs\":[{\"internalType\":\"contract IDelegationRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_domainSeparatorV4\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"signer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"authorizer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nftChainId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"createMessage\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"authorized\",\"type\":\"address\"}],\"name\":\"createSession\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"authorizer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nftTokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nftChainId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"targetChainId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"gas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct IForwardRequest.ERC721ForwardRequest\",\"name\":\"req\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"name\":\"execute\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"response\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"name\":\"executeWithProof\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getChainId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"}],\"name\":\"getNonce\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"}],\"name\":\"isAuthorized\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ownershipSigner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"authorizer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nftTokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nftChainId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"targetChainId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"gas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct IForwardRequest.ERC721ForwardRequest\",\"name\":\"req\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"name\":\"preflight\",\"outputs\":[],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"registry\",\"type\":\"address\"}],\"name\":\"setDelegationRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newSigner\",\"type\":\"address\"}],\"name\":\"setOwnershipSigner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"urls\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"authorizer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nftTokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nftChainId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"targetChainId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"gas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct IForwardRequest.ERC721ForwardRequest\",\"name\":\"req\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"name\":\"verify\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"authorizer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nftTokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nftChainId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"targetChainId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"gas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct IForwardRequest.ERC721ForwardRequest\",\"name\":\"req\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"verifyOwnershipProof\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"_domainSeparatorV4()\":{\"details\":\"Returns the domain separator for the current chain.\"},\"createMessage(address,address,uint256,uint256,address,uint256,uint256)\":{\"details\":\"The RPC server uses this view function to create the ownership proof\",\"params\":{\"authorizer\":\"the address that currently owns the L1 NFT\",\"nftChainId\":\"the chainId for the nftContract\",\"nftContract\":\"the contract address for the NFT being utilized\",\"nonce\":\"the meta-transaction nonce for account\",\"signer\":\"the address that currently owns the L1 NFT\",\"timestamp\":\"the timestamp from the OffchainLookup error\",\"tokenId\":\"the tokenId from nftContract for the NFT being utilized\"},\"returns\":{\"_0\":\"the message _ownershipSigner should sign\"}},\"executeWithProof(bytes,bytes)\":{\"details\":\"The RPC call and re-submission should be handled by your Relayer client\",\"params\":{\"extraData\":\"The unaltered bytes from OffchainLookup::extraData\",\"response\":\"The unaltered bytes reponse from a call made to an RPC url from OffchainLookup::urls\"}},\"getRoleAdmin(bytes32)\":{\"details\":\"Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.\"},\"grantRole(bytes32,address)\":{\"details\":\"Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event.\"},\"hasRole(bytes32,address)\":{\"details\":\"Returns `true` if `account` has been granted `role`.\"},\"ownershipSigner()\":{\"returns\":{\"_0\":\"the ownership proof signer address\"}},\"preflight((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes)\":{\"details\":\"Per EIP-3668, a valid signature will cause a revert with useful error params.\"},\"renounceRole(bytes32,address)\":{\"details\":\"Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.\"},\"revokeRole(bytes32,address)\":{\"details\":\"Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event.\"},\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"},\"verify((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes)\":{\"details\":\"Useful for transactions where the signer is not using a specific NFT, but values are still required in the signature - use the zero address for nftContract and 0 for tokenId\"},\"verifyOwnershipProof((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes,uint256)\":{\"details\":\"Ensures that _ownershipSigner signed a message containing (nftOwner OR authorized address, nonce, nftContract, tokenId)\",\"params\":{\"req\":\"structured data submitted by EOA making a meta-transaction request\",\"signature\":\"the signature proof created by the ownership signer EOA\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"createMessage(address,address,uint256,uint256,address,uint256,uint256)\":{\"notice\":\"Construct message that _ownershipSigner must sign as ownership proof\"},\"createSession(address)\":{\"notice\":\"Allow `authorized` to use your NFTs in a game for `length` seconds. Your NFTs         will not be held in custody or approved for transfer.\"},\"executeWithProof(bytes,bytes)\":{\"notice\":\"Re-submit a valid meta-tx request with trust-minimized proof to execute the transaction.\"},\"getNonce(address)\":{\"notice\":\"Get current nonce for EOA\"},\"isAuthorized(address,address)\":{\"notice\":\"Get current session for Primary EOA\"},\"ownershipSigner()\":{\"notice\":\"Get ownershipSigner address\"},\"preflight((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes)\":{\"notice\":\"Submit a meta-tx request and signature to check validity and receive a response with data useful for fetching a trusted proof per EIP-3668.\"},\"setDelegationRegistry(address)\":{\"notice\":\"Change the Delegation source\"},\"setOwnershipSigner(address)\":{\"notice\":\"Change the ownership signer\"},\"verify((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes)\":{\"notice\":\"Submit a meta-tx request where a proof of ownership is not required.\"},\"verifyOwnershipProof((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes,uint256)\":{\"notice\":\"Verify signed OffchainLookup proof against meta-tx request data\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/GlobalEntryForwarder/GlobalEntryForwarder.sol\":\"GlobalEntryForwarder\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@0xessential/contracts/fwd/EssentialEIP712Base.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.17;\\n\\nimport \\\"@openzeppelin/contracts/utils/cryptography/ECDSA.sol\\\";\\n\\n/**\\n * @dev https://eips.ethereum.org/EIPS/eip-712[EIP 712] is a standard for hashing and signing of typed structured data.\\n *\\n * The encoding specified in the EIP is very generic, and such a generic implementation in Solidity is not feasible,\\n * thus this contract does not implement the encoding itself. Protocols need to implement the type-specific encoding\\n * they need in their contracts using a combination of `abi.encode` and `keccak256`.\\n *\\n * This contract implements the EIP 712 domain separator ({_domainSeparatorV4}) that is used as part of the encoding\\n * scheme, and the final step of the encoding to obtain the message digest that is then signed via ECDSA\\n * ({_hashTypedDataV4}). 0xEssential removes the chainId from domainSeparator, instead including chainId as\\n * a bytes32 representation as the salt. This allows wallets to sign from any network, while still ensuring signatures\\n * can only be used on the target chain.\\n *\\n * The implementation of the domain separator was designed to be as efficient as possible while still properly updating\\n * the chain id to protect against replay attacks on an eventual fork of the chain.\\n *\\n * NOTE: This contract implements the version of the encoding known as \\\"v4\\\", as implemented by the JSON RPC method\\n * https://docs.metamask.io/guide/signing-data.html[`eth_signTypedDataV4` in MetaMask].\\n *\\n * _Available since v3.4._\\n */\\nabstract contract EssentialEIP712 {\\n    /* solhint-disable var-name-mixedcase */\\n    // Cache the domain separator as an immutable value, but also store the chain id that it corresponds to, in order to\\n    // invalidate the cached domain separator if the chain id changes.\\n    bytes32 private immutable _CACHED_DOMAIN_SEPARATOR;\\n    uint256 private immutable _CACHED_CHAIN_ID;\\n\\n    bytes32 private immutable _HASHED_NAME;\\n    bytes32 private immutable _HASHED_VERSION;\\n    bytes32 private immutable _TYPE_HASH;\\n\\n    /* solhint-enable var-name-mixedcase */\\n\\n    /**\\n     * @dev Initializes the domain separator and parameter caches.\\n     *\\n     * The meaning of `name` and `version` is specified in\\n     * https://eips.ethereum.org/EIPS/eip-712#definition-of-domainseparator[EIP 712]:\\n     *\\n     * - `name`: the user readable name of the signing domain, i.e. the name of the DApp or the protocol.\\n     * - `version`: the current major version of the signing domain.\\n     *\\n     * NOTE: These parameters cannot be changed except through a xref:learn::upgrading-smart-contracts.adoc[smart\\n     * contract upgrade].\\n     */\\n    constructor(string memory name, string memory version) {\\n        bytes32 hashedName = keccak256(bytes(name));\\n        bytes32 hashedVersion = keccak256(bytes(version));\\n        bytes32 typeHash = keccak256(\\\"EIP712Domain(string name,string version,address verifyingContract,bytes32 salt)\\\");\\n        _HASHED_NAME = hashedName;\\n        _HASHED_VERSION = hashedVersion;\\n        _CACHED_CHAIN_ID = block.chainid;\\n        _CACHED_DOMAIN_SEPARATOR = _buildDomainSeparator(typeHash, hashedName, hashedVersion);\\n        _TYPE_HASH = typeHash;\\n    }\\n\\n    /**\\n     * @dev Returns the domain separator for the current chain.\\n     */\\n    function _domainSeparatorV4() public view returns (bytes32) {\\n        if (block.chainid == _CACHED_CHAIN_ID) {\\n            return _CACHED_DOMAIN_SEPARATOR;\\n        } else {\\n            return _buildDomainSeparator(_TYPE_HASH, _HASHED_NAME, _HASHED_VERSION);\\n        }\\n    }\\n\\n    function _buildDomainSeparator(\\n        bytes32 typeHash,\\n        bytes32 nameHash,\\n        bytes32 versionHash\\n    ) private view returns (bytes32) {\\n        return keccak256(abi.encode(typeHash, nameHash, versionHash, address(this), bytes32(getChainId())));\\n    }\\n\\n    /**\\n     * @dev Given an already https://eips.ethereum.org/EIPS/eip-712#definition-of-hashstruct[hashed struct], this\\n     * function returns the hash of the fully encoded EIP712 message for this domain.\\n     *\\n     * This hash can be used together with {ECDSA-recover} to obtain the signer of a message. For example:\\n     *\\n     * ```solidity\\n     * bytes32 digest = _hashTypedDataV4(keccak256(abi.encode(\\n     *     keccak256(\\\"Mail(address to,string contents)\\\"),\\n     *     mailTo,\\n     *     keccak256(bytes(mailContents))\\n     * )));\\n     * address signer = ECDSA.recover(digest, signature);\\n     * ```\\n     */\\n    function _hashTypedDataV4(bytes32 structHash) internal view virtual returns (bytes32) {\\n        return ECDSA.toTypedDataHash(_domainSeparatorV4(), structHash);\\n    }\\n\\n    function getChainId() public view returns (uint256 id) {\\n        assembly {\\n            id := chainid()\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xdf3f592405f3edca11aa52b64cd75e5240e405b17e3dd2d9ec8a4bc731a4176b\",\"license\":\"MIT\"},\"@0xessential/contracts/fwd/EssentialForwarder.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.17;\\n\\nimport \\\"@openzeppelin/contracts/access/AccessControl.sol\\\";\\nimport \\\"@openzeppelin/contracts/utils/cryptography/ECDSA.sol\\\";\\nimport \\\"./EssentialEIP712Base.sol\\\";\\nimport \\\"./SignedOwnershipProof.sol\\\";\\nimport \\\"./IForwardRequest.sol\\\";\\nimport \\\"./IDelegationRegistry.sol\\\";\\n\\n/// @title EssentialForwarder\\n/// @author 0xEssential\\n/// @notice EIP-2771 based MetaTransaction Forwarding Contract with EIP-3668 OffchainLookup for cross-chain token gating\\n/// @dev Allows a Relayer to submit meta-transactions that utilize an NFT (i.e. in a game) on behalf of EOAs. Transactions\\n///      are only executed if the Relayer provides a signature from a trusted signer. The signature must include the current\\n///      owner of the Layer 1 NFT being used, or a Burner EOA the owner has authorized to use its NFTs.\\n///\\n///      EssentialForwarder can be used to build Layer 2 games that use Layer 1 NFTs without bridging and with superior UX.\\n///      End users can specify a Burner EOA from their primary EOA, and then use that burner address to play games.\\n///      The Burner EOA can then sign messages for game moves without user interaction without any risk to the NFTs or other\\n///      assets owned by the primary EOA.\\ncontract EssentialForwarder is EssentialEIP712, AccessControl, SignedOwnershipProof {\\n    using ECDSA for bytes32;\\n\\n    event Session(address indexed owner, address indexed authorized, uint256 indexed length);\\n\\n    error Unauthorized();\\n    error InvalidSignature();\\n    error InvalidOwnership();\\n    error OffchainLookup(address sender, string[] urls, bytes callData, bytes4 callbackFunction, bytes extraData);\\n\\n    bytes32 public constant ADMIN_ROLE = keccak256(\\\"ADMIN_ROLE\\\");\\n\\n    bytes32 private constant ERC721_TYPEHASH =\\n        keccak256(\\n            \\\"ForwardRequest(address to,address from,address authorizer,address nftContract,uint256 nonce,uint256 nftChainId,uint256 nftTokenId,uint256 targetChainId,bytes data)\\\"\\n        );\\n\\n    mapping(address => uint256) internal _nonces;\\n\\n    string[] public urls;\\n    IDelegationRegistry public DelegationRegistry;\\n\\n    constructor(string memory name, string[] memory _urls) EssentialEIP712(name, \\\"0.0.1\\\") {\\n        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);\\n        _setupRole(ADMIN_ROLE, msg.sender);\\n        _setOwnershipSigner(msg.sender);\\n        urls = _urls;\\n    }\\n\\n    /// @notice Change the ownership signer\\n    function setOwnershipSigner(address newSigner) external onlyRole(ADMIN_ROLE) {\\n        _setOwnershipSigner(newSigner);\\n    }\\n\\n    /// @notice Change the Delegation source\\n    function setDelegationRegistry(address registry) external onlyRole(ADMIN_ROLE) {\\n        DelegationRegistry = IDelegationRegistry(registry);\\n    }\\n\\n    /// @notice Get current nonce for EOA\\n    function getNonce(address from) external view returns (uint256) {\\n        return _nonces[from];\\n    }\\n\\n    /// @notice Get current session for Primary EOA\\n    function isAuthorized(address vault, address delegate) external view returns (bool) {\\n        return DelegationRegistry.checkDelegateForAll(delegate, vault);\\n    }\\n\\n    /// @notice Allow `authorized` to use your NFTs in a game for `length` seconds. Your NFTs\\n    ///         will not be held in custody or approved for transfer.\\n    function createSession(address authorized) external {\\n        DelegationRegistry.delegateForAll(authorized, true);\\n    }\\n\\n    /// @notice Submit a meta-tx request and signature to check validity and receive\\n    /// a response with data useful for fetching a trusted proof per EIP-3668.\\n    /// @dev Per EIP-3668, a valid signature will cause a revert with useful error params.\\n    function preflight(IForwardRequest.ERC721ForwardRequest calldata req, bytes calldata signature) public view {\\n        // If the signature is valid for the request and state, the client will receive\\n        // the OffchainLookup error with parameters suitable for an https call to a JSON\\n        // RPC server.\\n\\n        if (!verify(req, signature)) revert InvalidSignature();\\n\\n        revert OffchainLookup(\\n            address(this),\\n            urls,\\n            abi.encode(\\n                req.from,\\n                req.authorizer,\\n                _nonces[req.from],\\n                req.nftChainId,\\n                req.nftContract,\\n                req.nftTokenId,\\n                block.chainid,\\n                block.timestamp\\n            ),\\n            this.executeWithProof.selector,\\n            abi.encode(block.timestamp, req, signature)\\n        );\\n    }\\n\\n    /// @notice Re-submit a valid meta-tx request with trust-minimized proof to execute the transaction.\\n    /// @dev The RPC call and re-submission should be handled by your Relayer client\\n    /// @param response The unaltered bytes reponse from a call made to an RPC url from OffchainLookup::urls\\n    /// @param extraData The unaltered bytes from OffchainLookup::extraData\\n    function executeWithProof(bytes calldata response, bytes calldata extraData)\\n        external\\n        payable\\n        returns (bool, bytes memory)\\n    {\\n        (uint256 timestamp, IForwardRequest.ERC721ForwardRequest memory req, bytes memory signature) = abi.decode(\\n            extraData,\\n            (uint256, IForwardRequest.ERC721ForwardRequest, bytes)\\n        );\\n\\n        if (!verifyAuthorization(req)) revert Unauthorized();\\n        if (!verifyRequest(req, signature)) revert InvalidSignature();\\n        if (!verifyOwnershipProof(req, response, timestamp)) revert InvalidOwnership();\\n\\n        ++_nonces[req.from];\\n\\n        (bool success, bytes memory returndata) = req.to.call{gas: req.gas, value: 0}(\\n            // Implementation contracts may use EssentialERC2771Context::_msgNFT()\\n            // to access trusted NFT data. Calldata is compatible with OZ::_msgSender()\\n            abi.encodePacked(req.data, req.nftChainId, req.nftTokenId, req.nftContract, req.authorizer)\\n        );\\n\\n        // Validate that the relayer has sent enough gas for the call.\\n        // See https://ronan.eth.link/blog/ethereum-gas-dangers/\\n        assert(gasleft() > req.gas / 63);\\n\\n        return (success, returndata);\\n    }\\n\\n    /// @notice Submit a meta-tx request where a proof of ownership is not required.\\n    /// @dev Useful for transactions where the signer is not using a specific NFT, but values\\n    /// are still required in the signature - use the zero address for nftContract and 0 for tokenId\\n    function verify(IForwardRequest.ERC721ForwardRequest calldata req, bytes calldata signature)\\n        public\\n        view\\n        returns (bool)\\n    {\\n        return verifyRequest(req, signature);\\n    }\\n\\n    function execute(IForwardRequest.ERC721ForwardRequest calldata req, bytes calldata signature)\\n        public\\n        payable\\n        returns (bool, bytes memory)\\n    {\\n        if (!verifyRequest(req, signature)) revert InvalidSignature();\\n        if ((req.from != req.authorizer) && !verifyAuthorization(req)) revert Unauthorized();\\n\\n        _nonces[req.from] = req.nonce + 1;\\n\\n        (bool success, bytes memory returndata) = req.to.call{gas: req.gas, value: req.value}(\\n            abi.encodePacked(req.data, uint256(0), uint256(0), address(0), req.authorizer)\\n        );\\n\\n        // Validate that the relayer has sent enough gas for the call.\\n        // See https://ronan.eth.link/blog/ethereum-gas-dangers/\\n        assert(gasleft() > req.gas / 63);\\n\\n        return (success, returndata);\\n    }\\n\\n    function verifyRequest(IForwardRequest.ERC721ForwardRequest memory req, bytes memory signature)\\n        internal\\n        view\\n        returns (bool)\\n    {\\n        address signer = _hashTypedDataV4(\\n            keccak256(\\n                abi.encode(\\n                    ERC721_TYPEHASH,\\n                    req.to,\\n                    req.from,\\n                    req.authorizer,\\n                    req.nftContract,\\n                    req.nonce,\\n                    req.nftChainId,\\n                    req.nftTokenId,\\n                    req.targetChainId,\\n                    keccak256(req.data)\\n                )\\n            )\\n        ).recover(signature);\\n        return _nonces[req.from] == req.nonce && signer == req.from && req.targetChainId == block.chainid;\\n    }\\n\\n    function verifyAuthorization(IForwardRequest.ERC721ForwardRequest memory req) internal view returns (bool) {\\n        if (req.authorizer == req.from) return true;\\n        return DelegationRegistry.checkDelegateForAll(req.from, req.authorizer);\\n    }\\n}\\n\",\"keccak256\":\"0xe015febe9b562bba529a114b24a11041b7b47abf4c4821970e33184e04c664eb\",\"license\":\"MIT\"},\"@0xessential/contracts/fwd/IDelegationRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: CC0-1.0\\npragma solidity ^0.8.17;\\n\\n/**\\n * @title An immutable registry contract to be deployed as a standalone primitive\\n * @dev See EIP-5639, new project launches can read previous cold wallet -> hot wallet delegations\\n * from here and integrate those permissions into their flow\\n */\\ninterface IDelegationRegistry {\\n    /// @notice Delegation type\\n    enum DelegationType {\\n        NONE,\\n        ALL,\\n        CONTRACT,\\n        TOKEN\\n    }\\n\\n    /// @notice Info about a single delegation, used for onchain enumeration\\n    struct DelegationInfo {\\n        DelegationType type_;\\n        address vault;\\n        address delegate;\\n        address contract_;\\n        uint256 tokenId;\\n    }\\n\\n    /// @notice Info about a single contract-level delegation\\n    struct ContractDelegation {\\n        address contract_;\\n        address delegate;\\n    }\\n\\n    /// @notice Info about a single token-level delegation\\n    struct TokenDelegation {\\n        address contract_;\\n        uint256 tokenId;\\n        address delegate;\\n    }\\n\\n    /// @notice Emitted when a user delegates their entire wallet\\n    event DelegateForAll(address vault, address delegate, bool value);\\n\\n    /// @notice Emitted when a user delegates a specific contract\\n    event DelegateForContract(address vault, address delegate, address contract_, bool value);\\n\\n    /// @notice Emitted when a user delegates a specific token\\n    event DelegateForToken(address vault, address delegate, address contract_, uint256 tokenId, bool value);\\n\\n    /// @notice Emitted when a user revokes all delegations\\n    event RevokeAllDelegates(address vault);\\n\\n    /// @notice Emitted when a user revoes all delegations for a given delegate\\n    event RevokeDelegate(address vault, address delegate);\\n\\n    /**\\n     * -----------  WRITE -----------\\n     */\\n\\n    /**\\n     * @notice Allow the delegate to act on your behalf for all contracts\\n     * @param delegate The hotwallet to act on your behalf\\n     * @param value Whether to enable or disable delegation for this address, true for setting and false for revoking\\n     */\\n    function delegateForAll(address delegate, bool value) external;\\n\\n    /**\\n     * @notice Allow the delegate to act on your behalf for a specific contract\\n     * @param delegate The hotwallet to act on your behalf\\n     * @param contract_ The address for the contract you're delegating\\n     * @param value Whether to enable or disable delegation for this address, true for setting and false for revoking\\n     */\\n    function delegateForContract(\\n        address delegate,\\n        address contract_,\\n        bool value\\n    ) external;\\n\\n    /**\\n     * @notice Allow the delegate to act on your behalf for a specific token\\n     * @param delegate The hotwallet to act on your behalf\\n     * @param contract_ The address for the contract you're delegating\\n     * @param tokenId The token id for the token you're delegating\\n     * @param value Whether to enable or disable delegation for this address, true for setting and false for revoking\\n     */\\n    function delegateForToken(\\n        address delegate,\\n        address contract_,\\n        uint256 tokenId,\\n        bool value\\n    ) external;\\n\\n    /**\\n     * @notice Revoke all delegates\\n     */\\n    function revokeAllDelegates() external;\\n\\n    /**\\n     * @notice Revoke a specific delegate for all their permissions\\n     * @param delegate The hotwallet to revoke\\n     */\\n    function revokeDelegate(address delegate) external;\\n\\n    /**\\n     * @notice Remove yourself as a delegate for a specific vault\\n     * @param vault The vault which delegated to the msg.sender, and should be removed\\n     */\\n    function revokeSelf(address vault) external;\\n\\n    /**\\n     * -----------  READ -----------\\n     */\\n\\n    /**\\n     * @notice Returns all active delegations a given delegate is able to claim on behalf of\\n     * @param delegate The delegate that you would like to retrieve delegations for\\n     * @return info Array of DelegationInfo structs\\n     */\\n    function getDelegationsByDelegate(address delegate) external view returns (DelegationInfo[] memory);\\n\\n    /**\\n     * @notice Returns an array of wallet-level delegates for a given vault\\n     * @param vault The cold wallet who issued the delegation\\n     * @return addresses Array of wallet-level delegates for a given vault\\n     */\\n    function getDelegatesForAll(address vault) external view returns (address[] memory);\\n\\n    /**\\n     * @notice Returns an array of contract-level delegates for a given vault and contract\\n     * @param vault The cold wallet who issued the delegation\\n     * @param contract_ The address for the contract you're delegating\\n     * @return addresses Array of contract-level delegates for a given vault and contract\\n     */\\n    function getDelegatesForContract(address vault, address contract_) external view returns (address[] memory);\\n\\n    /**\\n     * @notice Returns an array of contract-level delegates for a given vault's token\\n     * @param vault The cold wallet who issued the delegation\\n     * @param contract_ The address for the contract holding the token\\n     * @param tokenId The token id for the token you're delegating\\n     * @return addresses Array of contract-level delegates for a given vault's token\\n     */\\n    function getDelegatesForToken(\\n        address vault,\\n        address contract_,\\n        uint256 tokenId\\n    ) external view returns (address[] memory);\\n\\n    /**\\n     * @notice Returns all contract-level delegations for a given vault\\n     * @param vault The cold wallet who issued the delegations\\n     * @return delegations Array of ContractDelegation structs\\n     */\\n    function getContractLevelDelegations(address vault) external view returns (ContractDelegation[] memory delegations);\\n\\n    /**\\n     * @notice Returns all token-level delegations for a given vault\\n     * @param vault The cold wallet who issued the delegations\\n     * @return delegations Array of TokenDelegation structs\\n     */\\n    function getTokenLevelDelegations(address vault) external view returns (TokenDelegation[] memory delegations);\\n\\n    /**\\n     * @notice Returns true if the address is delegated to act on the entire vault\\n     * @param delegate The hotwallet to act on your behalf\\n     * @param vault The cold wallet who issued the delegation\\n     */\\n    function checkDelegateForAll(address delegate, address vault) external view returns (bool);\\n\\n    /**\\n     * @notice Returns true if the address is delegated to act on your behalf for a token contract or an entire vault\\n     * @param delegate The hotwallet to act on your behalf\\n     * @param contract_ The address for the contract you're delegating\\n     * @param vault The cold wallet who issued the delegation\\n     */\\n    function checkDelegateForContract(\\n        address delegate,\\n        address vault,\\n        address contract_\\n    ) external view returns (bool);\\n\\n    /**\\n     * @notice Returns true if the address is delegated to act on your behalf for a specific token, the token's contract or an entire vault\\n     * @param delegate The hotwallet to act on your behalf\\n     * @param contract_ The address for the contract you're delegating\\n     * @param tokenId The token id for the token you're delegating\\n     * @param vault The cold wallet who issued the delegation\\n     */\\n    function checkDelegateForToken(\\n        address delegate,\\n        address vault,\\n        address contract_,\\n        uint256 tokenId\\n    ) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x83fb0efaff23bc33f4f26dad2ea4e181e774448abcc419c4a21d4d9c2230a7c0\",\"license\":\"CC0-1.0\"},\"@0xessential/contracts/fwd/IForwardRequest.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.17;\\n\\ninterface IForwardRequest {\\n    struct ERC721ForwardRequest {\\n        address from; // Externally-owned account (EOA) signing the request.\\n        address authorizer; // Externally-owned account (EOA) that authorized from account in PlaySession.\\n        address to; // Destination address, normally a smart contract for an nFight game.\\n        address nftContract; // The address of the NFT contract for the token being used.\\n        uint256 nftTokenId; // The tokenId of the NFT being used\\n        uint256 nftChainId; // The chainId of the NFT neing used\\n        uint256 targetChainId; // The chainId where the Forwarder and implementation contract are deployed.\\n        uint256 value; // Amount of ether to transfer to the destination.\\n        uint256 gas; // Amount of gas limit to set for the execution.\\n        uint256 nonce; // On-chain tracked nonce of a transaction.\\n        bytes data; // (Call)data to be sent to the destination.\\n    }\\n\\n    struct MetaTransaction {\\n        uint256 nonce;\\n        address from;\\n        bytes functionSignature;\\n    }\\n\\n    struct PlaySession {\\n        address authorized; // Burner EOA that is authorized to play with NFTs by owner EOA.\\n        uint256 expiresAt; // block timestamp when the session is invalidated.\\n    }\\n\\n    struct NFT {\\n        address contractAddress;\\n        uint256 tokenId;\\n        uint256 chainId;\\n    }\\n}\\n\",\"keccak256\":\"0x47e220788ffe505aed5cf9eb42dcbbc0c1128e82cf563905e87c1a7365fc039b\",\"license\":\"MIT\"},\"@0xessential/contracts/fwd/SignedOwnershipProof.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity ^0.8.17;\\n\\nimport \\\"@openzeppelin/contracts/utils/cryptography/ECDSA.sol\\\";\\nimport \\\"./IForwardRequest.sol\\\";\\nimport \\\"./EssentialEIP712Base.sol\\\" as EssentialEIP712Base;\\n\\n/// @title SignedOwnershipProof\\n/// @author Sammy Bauch\\n/// @dev Based on SignedAllowance by Simon Fremaux (@dievardump)\\n/// see https://github.com/dievardump/signed-minting\\n\\ncontract SignedOwnershipProof {\\n    using ECDSA for bytes32;\\n\\n    // address used to sign proof of ownership\\n    address private _ownershipSigner;\\n\\n    /// @notice Construct message that _ownershipSigner must sign as ownership proof\\n    /// @dev The RPC server uses this view function to create the ownership proof\\n    /// @param signer the address that currently owns the L1 NFT\\n    /// @param authorizer the address that currently owns the L1 NFT\\n    /// @param nonce the meta-transaction nonce for account\\n    /// @param nftChainId the chainId for the nftContract\\n    /// @param nftContract the contract address for the NFT being utilized\\n    /// @param tokenId the tokenId from nftContract for the NFT being utilized\\n    /// @param timestamp the timestamp from the OffchainLookup error\\n    /// @return the message _ownershipSigner should sign\\n    function createMessage(\\n        address signer,\\n        address authorizer,\\n        uint256 nonce,\\n        uint256 nftChainId,\\n        address nftContract,\\n        uint256 tokenId,\\n        uint256 timestamp\\n    ) public view returns (bytes32) {\\n        return\\n            keccak256(\\n                abi.encode(signer, authorizer, nonce, nftChainId, nftContract, tokenId, block.chainid, timestamp)\\n            );\\n    }\\n\\n    /// @notice Verify signed OffchainLookup proof against meta-tx request data\\n    /// @dev Ensures that _ownershipSigner signed a message containing (nftOwner OR authorized address, nonce, nftContract, tokenId)\\n    /// @param req structured data submitted by EOA making a meta-transaction request\\n    /// @param signature the signature proof created by the ownership signer EOA\\n    function verifyOwnershipProof(\\n        IForwardRequest.ERC721ForwardRequest memory req,\\n        bytes memory signature,\\n        uint256 timestamp\\n    ) public view returns (bool) {\\n        // TODO: what are the drift requirements here?\\n        require(block.timestamp - timestamp < 10 minutes, \\\"Stale\\\");\\n\\n        bytes32 message = createMessage(\\n            req.from,\\n            req.authorizer,\\n            req.nonce,\\n            req.nftChainId,\\n            req.nftContract,\\n            req.nftTokenId,\\n            timestamp\\n        ).toEthSignedMessageHash();\\n\\n        return message.recover(signature) == _ownershipSigner;\\n    }\\n\\n    /// @notice Get ownershipSigner address\\n    /// @return the ownership proof signer address\\n    function ownershipSigner() public view returns (address) {\\n        return _ownershipSigner;\\n    }\\n\\n    /// @dev This signer should hold no assets and is only used for signing L1 ownership proofs.\\n    /// @param newSigner the new signer's public address\\n    function _setOwnershipSigner(address newSigner) internal {\\n        _ownershipSigner = newSigner;\\n    }\\n}\\n\",\"keccak256\":\"0x438289ae80d64679c88651efcd97f01feab63c30de6cc6ccaad99afd3118009f\",\"license\":\"MIT\"},\"@openzeppelin/contracts/access/AccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (access/AccessControl.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./IAccessControl.sol\\\";\\nimport \\\"../utils/Context.sol\\\";\\nimport \\\"../utils/Strings.sol\\\";\\nimport \\\"../utils/introspection/ERC165.sol\\\";\\n\\n/**\\n * @dev Contract module that allows children to implement role-based access\\n * control mechanisms. This is a lightweight version that doesn't allow enumerating role\\n * members except through off-chain means by accessing the contract event logs. Some\\n * applications may benefit from on-chain enumerability, for those cases see\\n * {AccessControlEnumerable}.\\n *\\n * Roles are referred to by their `bytes32` identifier. These should be exposed\\n * in the external API and be unique. The best way to achieve this is by\\n * using `public constant` hash digests:\\n *\\n * ```\\n * bytes32 public constant MY_ROLE = keccak256(\\\"MY_ROLE\\\");\\n * ```\\n *\\n * Roles can be used to represent a set of permissions. To restrict access to a\\n * function call, use {hasRole}:\\n *\\n * ```\\n * function foo() public {\\n *     require(hasRole(MY_ROLE, msg.sender));\\n *     ...\\n * }\\n * ```\\n *\\n * Roles can be granted and revoked dynamically via the {grantRole} and\\n * {revokeRole} functions. Each role has an associated admin role, and only\\n * accounts that have a role's admin role can call {grantRole} and {revokeRole}.\\n *\\n * By default, the admin role for all roles is `DEFAULT_ADMIN_ROLE`, which means\\n * that only accounts with this role will be able to grant or revoke other\\n * roles. More complex role relationships can be created by using\\n * {_setRoleAdmin}.\\n *\\n * WARNING: The `DEFAULT_ADMIN_ROLE` is also its own admin: it has permission to\\n * grant and revoke this role. Extra precautions should be taken to secure\\n * accounts that have been granted it.\\n */\\nabstract contract AccessControl is Context, IAccessControl, ERC165 {\\n    struct RoleData {\\n        mapping(address => bool) members;\\n        bytes32 adminRole;\\n    }\\n\\n    mapping(bytes32 => RoleData) private _roles;\\n\\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\\n\\n    /**\\n     * @dev Modifier that checks that an account has a specific role. Reverts\\n     * with a standardized message including the required role.\\n     *\\n     * The format of the revert reason is given by the following regular expression:\\n     *\\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\\n     *\\n     * _Available since v4.1._\\n     */\\n    modifier onlyRole(bytes32 role) {\\n        _checkRole(role);\\n        _;\\n    }\\n\\n    /**\\n     * @dev See {IERC165-supportsInterface}.\\n     */\\n    function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\\n        return interfaceId == type(IAccessControl).interfaceId || super.supportsInterface(interfaceId);\\n    }\\n\\n    /**\\n     * @dev Returns `true` if `account` has been granted `role`.\\n     */\\n    function hasRole(bytes32 role, address account) public view virtual override returns (bool) {\\n        return _roles[role].members[account];\\n    }\\n\\n    /**\\n     * @dev Revert with a standard message if `_msgSender()` is missing `role`.\\n     * Overriding this function changes the behavior of the {onlyRole} modifier.\\n     *\\n     * Format of the revert message is described in {_checkRole}.\\n     *\\n     * _Available since v4.6._\\n     */\\n    function _checkRole(bytes32 role) internal view virtual {\\n        _checkRole(role, _msgSender());\\n    }\\n\\n    /**\\n     * @dev Revert with a standard message if `account` is missing `role`.\\n     *\\n     * The format of the revert reason is given by the following regular expression:\\n     *\\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\\n     */\\n    function _checkRole(bytes32 role, address account) internal view virtual {\\n        if (!hasRole(role, account)) {\\n            revert(\\n                string(\\n                    abi.encodePacked(\\n                        \\\"AccessControl: account \\\",\\n                        Strings.toHexString(account),\\n                        \\\" is missing role \\\",\\n                        Strings.toHexString(uint256(role), 32)\\n                    )\\n                )\\n            );\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the admin role that controls `role`. See {grantRole} and\\n     * {revokeRole}.\\n     *\\n     * To change a role's admin, use {_setRoleAdmin}.\\n     */\\n    function getRoleAdmin(bytes32 role) public view virtual override returns (bytes32) {\\n        return _roles[role].adminRole;\\n    }\\n\\n    /**\\n     * @dev Grants `role` to `account`.\\n     *\\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\\n     * event.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must have ``role``'s admin role.\\n     *\\n     * May emit a {RoleGranted} event.\\n     */\\n    function grantRole(bytes32 role, address account) public virtual override onlyRole(getRoleAdmin(role)) {\\n        _grantRole(role, account);\\n    }\\n\\n    /**\\n     * @dev Revokes `role` from `account`.\\n     *\\n     * If `account` had been granted `role`, emits a {RoleRevoked} event.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must have ``role``'s admin role.\\n     *\\n     * May emit a {RoleRevoked} event.\\n     */\\n    function revokeRole(bytes32 role, address account) public virtual override onlyRole(getRoleAdmin(role)) {\\n        _revokeRole(role, account);\\n    }\\n\\n    /**\\n     * @dev Revokes `role` from the calling account.\\n     *\\n     * Roles are often managed via {grantRole} and {revokeRole}: this function's\\n     * purpose is to provide a mechanism for accounts to lose their privileges\\n     * if they are compromised (such as when a trusted device is misplaced).\\n     *\\n     * If the calling account had been revoked `role`, emits a {RoleRevoked}\\n     * event.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must be `account`.\\n     *\\n     * May emit a {RoleRevoked} event.\\n     */\\n    function renounceRole(bytes32 role, address account) public virtual override {\\n        require(account == _msgSender(), \\\"AccessControl: can only renounce roles for self\\\");\\n\\n        _revokeRole(role, account);\\n    }\\n\\n    /**\\n     * @dev Grants `role` to `account`.\\n     *\\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\\n     * event. Note that unlike {grantRole}, this function doesn't perform any\\n     * checks on the calling account.\\n     *\\n     * May emit a {RoleGranted} event.\\n     *\\n     * [WARNING]\\n     * ====\\n     * This function should only be called from the constructor when setting\\n     * up the initial roles for the system.\\n     *\\n     * Using this function in any other way is effectively circumventing the admin\\n     * system imposed by {AccessControl}.\\n     * ====\\n     *\\n     * NOTE: This function is deprecated in favor of {_grantRole}.\\n     */\\n    function _setupRole(bytes32 role, address account) internal virtual {\\n        _grantRole(role, account);\\n    }\\n\\n    /**\\n     * @dev Sets `adminRole` as ``role``'s admin role.\\n     *\\n     * Emits a {RoleAdminChanged} event.\\n     */\\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal virtual {\\n        bytes32 previousAdminRole = getRoleAdmin(role);\\n        _roles[role].adminRole = adminRole;\\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\\n    }\\n\\n    /**\\n     * @dev Grants `role` to `account`.\\n     *\\n     * Internal function without access restriction.\\n     *\\n     * May emit a {RoleGranted} event.\\n     */\\n    function _grantRole(bytes32 role, address account) internal virtual {\\n        if (!hasRole(role, account)) {\\n            _roles[role].members[account] = true;\\n            emit RoleGranted(role, account, _msgSender());\\n        }\\n    }\\n\\n    /**\\n     * @dev Revokes `role` from `account`.\\n     *\\n     * Internal function without access restriction.\\n     *\\n     * May emit a {RoleRevoked} event.\\n     */\\n    function _revokeRole(bytes32 role, address account) internal virtual {\\n        if (hasRole(role, account)) {\\n            _roles[role].members[account] = false;\\n            emit RoleRevoked(role, account, _msgSender());\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x67e3daf189111d6d5b0464ed09cf9f0605a22c4b965a7fcecd707101faff008a\",\"license\":\"MIT\"},\"@openzeppelin/contracts/access/IAccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (access/IAccessControl.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev External interface of AccessControl declared to support ERC165 detection.\\n */\\ninterface IAccessControl {\\n    /**\\n     * @dev Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole`\\n     *\\n     * `DEFAULT_ADMIN_ROLE` is the starting admin for all roles, despite\\n     * {RoleAdminChanged} not being emitted signaling this.\\n     *\\n     * _Available since v3.1._\\n     */\\n    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);\\n\\n    /**\\n     * @dev Emitted when `account` is granted `role`.\\n     *\\n     * `sender` is the account that originated the contract call, an admin role\\n     * bearer except when using {AccessControl-_setupRole}.\\n     */\\n    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);\\n\\n    /**\\n     * @dev Emitted when `account` is revoked `role`.\\n     *\\n     * `sender` is the account that originated the contract call:\\n     *   - if using `revokeRole`, it is the admin role bearer\\n     *   - if using `renounceRole`, it is the role bearer (i.e. `account`)\\n     */\\n    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);\\n\\n    /**\\n     * @dev Returns `true` if `account` has been granted `role`.\\n     */\\n    function hasRole(bytes32 role, address account) external view returns (bool);\\n\\n    /**\\n     * @dev Returns the admin role that controls `role`. See {grantRole} and\\n     * {revokeRole}.\\n     *\\n     * To change a role's admin, use {AccessControl-_setRoleAdmin}.\\n     */\\n    function getRoleAdmin(bytes32 role) external view returns (bytes32);\\n\\n    /**\\n     * @dev Grants `role` to `account`.\\n     *\\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\\n     * event.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must have ``role``'s admin role.\\n     */\\n    function grantRole(bytes32 role, address account) external;\\n\\n    /**\\n     * @dev Revokes `role` from `account`.\\n     *\\n     * If `account` had been granted `role`, emits a {RoleRevoked} event.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must have ``role``'s admin role.\\n     */\\n    function revokeRole(bytes32 role, address account) external;\\n\\n    /**\\n     * @dev Revokes `role` from the calling account.\\n     *\\n     * Roles are often managed via {grantRole} and {revokeRole}: this function's\\n     * purpose is to provide a mechanism for accounts to lose their privileges\\n     * if they are compromised (such as when a trusted device is misplaced).\\n     *\\n     * If the calling account had been granted `role`, emits a {RoleRevoked}\\n     * event.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must be `account`.\\n     */\\n    function renounceRole(bytes32 role, address account) external;\\n}\\n\",\"keccak256\":\"0x59ce320a585d7e1f163cd70390a0ef2ff9cec832e2aa544293a00692465a7a57\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./math/Math.sol\\\";\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            uint256 length = Math.log10(value) + 1;\\n            string memory buffer = new string(length);\\n            uint256 ptr;\\n            /// @solidity memory-safe-assembly\\n            assembly {\\n                ptr := add(buffer, add(32, length))\\n            }\\n            while (true) {\\n                ptr--;\\n                /// @solidity memory-safe-assembly\\n                assembly {\\n                    mstore8(ptr, byte(mod(value, 10), _SYMBOLS))\\n                }\\n                value /= 10;\\n                if (value == 0) break;\\n            }\\n            return buffer;\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            return toHexString(value, Math.log256(value) + 1);\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/cryptography/ECDSA.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/cryptography/ECDSA.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../Strings.sol\\\";\\n\\n/**\\n * @dev Elliptic Curve Digital Signature Algorithm (ECDSA) operations.\\n *\\n * These functions can be used to verify that a message was signed by the holder\\n * of the private keys of a given address.\\n */\\nlibrary ECDSA {\\n    enum RecoverError {\\n        NoError,\\n        InvalidSignature,\\n        InvalidSignatureLength,\\n        InvalidSignatureS,\\n        InvalidSignatureV // Deprecated in v4.8\\n    }\\n\\n    function _throwError(RecoverError error) private pure {\\n        if (error == RecoverError.NoError) {\\n            return; // no error: do nothing\\n        } else if (error == RecoverError.InvalidSignature) {\\n            revert(\\\"ECDSA: invalid signature\\\");\\n        } else if (error == RecoverError.InvalidSignatureLength) {\\n            revert(\\\"ECDSA: invalid signature length\\\");\\n        } else if (error == RecoverError.InvalidSignatureS) {\\n            revert(\\\"ECDSA: invalid signature 's' value\\\");\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the address that signed a hashed message (`hash`) with\\n     * `signature` or error string. This address can then be used for verification purposes.\\n     *\\n     * The `ecrecover` EVM opcode allows for malleable (non-unique) signatures:\\n     * this function rejects them by requiring the `s` value to be in the lower\\n     * half order, and the `v` value to be either 27 or 28.\\n     *\\n     * IMPORTANT: `hash` _must_ be the result of a hash operation for the\\n     * verification to be secure: it is possible to craft signatures that\\n     * recover to arbitrary addresses for non-hashed data. A safe way to ensure\\n     * this is by receiving a hash of the original message (which may otherwise\\n     * be too long), and then calling {toEthSignedMessageHash} on it.\\n     *\\n     * Documentation for signature generation:\\n     * - with https://web3js.readthedocs.io/en/v1.3.4/web3-eth-accounts.html#sign[Web3.js]\\n     * - with https://docs.ethers.io/v5/api/signer/#Signer-signMessage[ethers]\\n     *\\n     * _Available since v4.3._\\n     */\\n    function tryRecover(bytes32 hash, bytes memory signature) internal pure returns (address, RecoverError) {\\n        if (signature.length == 65) {\\n            bytes32 r;\\n            bytes32 s;\\n            uint8 v;\\n            // ecrecover takes the signature parameters, and the only way to get them\\n            // currently is to use assembly.\\n            /// @solidity memory-safe-assembly\\n            assembly {\\n                r := mload(add(signature, 0x20))\\n                s := mload(add(signature, 0x40))\\n                v := byte(0, mload(add(signature, 0x60)))\\n            }\\n            return tryRecover(hash, v, r, s);\\n        } else {\\n            return (address(0), RecoverError.InvalidSignatureLength);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the address that signed a hashed message (`hash`) with\\n     * `signature`. This address can then be used for verification purposes.\\n     *\\n     * The `ecrecover` EVM opcode allows for malleable (non-unique) signatures:\\n     * this function rejects them by requiring the `s` value to be in the lower\\n     * half order, and the `v` value to be either 27 or 28.\\n     *\\n     * IMPORTANT: `hash` _must_ be the result of a hash operation for the\\n     * verification to be secure: it is possible to craft signatures that\\n     * recover to arbitrary addresses for non-hashed data. A safe way to ensure\\n     * this is by receiving a hash of the original message (which may otherwise\\n     * be too long), and then calling {toEthSignedMessageHash} on it.\\n     */\\n    function recover(bytes32 hash, bytes memory signature) internal pure returns (address) {\\n        (address recovered, RecoverError error) = tryRecover(hash, signature);\\n        _throwError(error);\\n        return recovered;\\n    }\\n\\n    /**\\n     * @dev Overload of {ECDSA-tryRecover} that receives the `r` and `vs` short-signature fields separately.\\n     *\\n     * See https://eips.ethereum.org/EIPS/eip-2098[EIP-2098 short signatures]\\n     *\\n     * _Available since v4.3._\\n     */\\n    function tryRecover(\\n        bytes32 hash,\\n        bytes32 r,\\n        bytes32 vs\\n    ) internal pure returns (address, RecoverError) {\\n        bytes32 s = vs & bytes32(0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff);\\n        uint8 v = uint8((uint256(vs) >> 255) + 27);\\n        return tryRecover(hash, v, r, s);\\n    }\\n\\n    /**\\n     * @dev Overload of {ECDSA-recover} that receives the `r and `vs` short-signature fields separately.\\n     *\\n     * _Available since v4.2._\\n     */\\n    function recover(\\n        bytes32 hash,\\n        bytes32 r,\\n        bytes32 vs\\n    ) internal pure returns (address) {\\n        (address recovered, RecoverError error) = tryRecover(hash, r, vs);\\n        _throwError(error);\\n        return recovered;\\n    }\\n\\n    /**\\n     * @dev Overload of {ECDSA-tryRecover} that receives the `v`,\\n     * `r` and `s` signature fields separately.\\n     *\\n     * _Available since v4.3._\\n     */\\n    function tryRecover(\\n        bytes32 hash,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) internal pure returns (address, RecoverError) {\\n        // EIP-2 still allows signature malleability for ecrecover(). Remove this possibility and make the signature\\n        // unique. Appendix F in the Ethereum Yellow paper (https://ethereum.github.io/yellowpaper/paper.pdf), defines\\n        // the valid range for s in (301): 0 < s < secp256k1n \\u00f7 2 + 1, and for v in (302): v \\u2208 {27, 28}. Most\\n        // signatures from current libraries generate a unique signature with an s-value in the lower half order.\\n        //\\n        // If your library generates malleable signatures, such as s-values in the upper range, calculate a new s-value\\n        // with 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141 - s1 and flip v from 27 to 28 or\\n        // vice versa. If your library also generates signatures with 0/1 for v instead 27/28, add 27 to v to accept\\n        // these malleable signatures as well.\\n        if (uint256(s) > 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0) {\\n            return (address(0), RecoverError.InvalidSignatureS);\\n        }\\n\\n        // If the signature is valid (and not malleable), return the signer address\\n        address signer = ecrecover(hash, v, r, s);\\n        if (signer == address(0)) {\\n            return (address(0), RecoverError.InvalidSignature);\\n        }\\n\\n        return (signer, RecoverError.NoError);\\n    }\\n\\n    /**\\n     * @dev Overload of {ECDSA-recover} that receives the `v`,\\n     * `r` and `s` signature fields separately.\\n     */\\n    function recover(\\n        bytes32 hash,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) internal pure returns (address) {\\n        (address recovered, RecoverError error) = tryRecover(hash, v, r, s);\\n        _throwError(error);\\n        return recovered;\\n    }\\n\\n    /**\\n     * @dev Returns an Ethereum Signed Message, created from a `hash`. This\\n     * produces hash corresponding to the one signed with the\\n     * https://eth.wiki/json-rpc/API#eth_sign[`eth_sign`]\\n     * JSON-RPC method as part of EIP-191.\\n     *\\n     * See {recover}.\\n     */\\n    function toEthSignedMessageHash(bytes32 hash) internal pure returns (bytes32) {\\n        // 32 is the length in bytes of hash,\\n        // enforced by the type signature above\\n        return keccak256(abi.encodePacked(\\\"\\\\x19Ethereum Signed Message:\\\\n32\\\", hash));\\n    }\\n\\n    /**\\n     * @dev Returns an Ethereum Signed Message, created from `s`. This\\n     * produces hash corresponding to the one signed with the\\n     * https://eth.wiki/json-rpc/API#eth_sign[`eth_sign`]\\n     * JSON-RPC method as part of EIP-191.\\n     *\\n     * See {recover}.\\n     */\\n    function toEthSignedMessageHash(bytes memory s) internal pure returns (bytes32) {\\n        return keccak256(abi.encodePacked(\\\"\\\\x19Ethereum Signed Message:\\\\n\\\", Strings.toString(s.length), s));\\n    }\\n\\n    /**\\n     * @dev Returns an Ethereum Signed Typed Data, created from a\\n     * `domainSeparator` and a `structHash`. This produces hash corresponding\\n     * to the one signed with the\\n     * https://eips.ethereum.org/EIPS/eip-712[`eth_signTypedData`]\\n     * JSON-RPC method as part of EIP-712.\\n     *\\n     * See {recover}.\\n     */\\n    function toTypedDataHash(bytes32 domainSeparator, bytes32 structHash) internal pure returns (bytes32) {\\n        return keccak256(abi.encodePacked(\\\"\\\\x19\\\\x01\\\", domainSeparator, structHash));\\n    }\\n}\\n\",\"keccak256\":\"0xda898fa084aa1ddfdb346e6a40459e00a59d87071cce7c315a46d648dd71d0ba\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/introspection/ERC165.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./IERC165.sol\\\";\\n\\n/**\\n * @dev Implementation of the {IERC165} interface.\\n *\\n * Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check\\n * for the additional interface id that will be supported. For example:\\n *\\n * ```solidity\\n * function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\\n *     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId);\\n * }\\n * ```\\n *\\n * Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.\\n */\\nabstract contract ERC165 is IERC165 {\\n    /**\\n     * @dev See {IERC165-supportsInterface}.\\n     */\\n    function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\\n        return interfaceId == type(IERC165).interfaceId;\\n    }\\n}\\n\",\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/introspection/IERC165.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC165 standard, as defined in the\\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\\n *\\n * Implementers can declare support of contract interfaces, which can then be\\n * queried by others ({ERC165Checker}).\\n *\\n * For an implementation, see {ERC165}.\\n */\\ninterface IERC165 {\\n    /**\\n     * @dev Returns true if this contract implements the interface defined by\\n     * `interfaceId`. See the corresponding\\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\\n     * to learn more about how these ids are created.\\n     *\\n     * This function call must use less than 30 000 gas.\\n     */\\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/math/Math.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Standard math utilities missing in the Solidity language.\\n */\\nlibrary Math {\\n    enum Rounding {\\n        Down, // Toward negative infinity\\n        Up, // Toward infinity\\n        Zero // Toward zero\\n    }\\n\\n    /**\\n     * @dev Returns the largest of two numbers.\\n     */\\n    function max(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a > b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the smallest of two numbers.\\n     */\\n    function min(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a < b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the average of two numbers. The result is rounded towards\\n     * zero.\\n     */\\n    function average(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b) / 2 can overflow.\\n        return (a & b) + (a ^ b) / 2;\\n    }\\n\\n    /**\\n     * @dev Returns the ceiling of the division of two numbers.\\n     *\\n     * This differs from standard division with `/` in that it rounds up instead\\n     * of rounding down.\\n     */\\n    function ceilDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b - 1) / b can overflow on addition, so we distribute.\\n        return a == 0 ? 0 : (a - 1) / b + 1;\\n    }\\n\\n    /**\\n     * @notice Calculates floor(x * y / denominator) with full precision. Throws if result overflows a uint256 or denominator == 0\\n     * @dev Original credit to Remco Bloemen under MIT license (https://xn--2-umb.com/21/muldiv)\\n     * with further edits by Uniswap Labs also under MIT license.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator\\n    ) internal pure returns (uint256 result) {\\n        unchecked {\\n            // 512-bit multiply [prod1 prod0] = x * y. Compute the product mod 2^256 and mod 2^256 - 1, then use\\n            // use the Chinese Remainder Theorem to reconstruct the 512 bit result. The result is stored in two 256\\n            // variables such that product = prod1 * 2^256 + prod0.\\n            uint256 prod0; // Least significant 256 bits of the product\\n            uint256 prod1; // Most significant 256 bits of the product\\n            assembly {\\n                let mm := mulmod(x, y, not(0))\\n                prod0 := mul(x, y)\\n                prod1 := sub(sub(mm, prod0), lt(mm, prod0))\\n            }\\n\\n            // Handle non-overflow cases, 256 by 256 division.\\n            if (prod1 == 0) {\\n                return prod0 / denominator;\\n            }\\n\\n            // Make sure the result is less than 2^256. Also prevents denominator == 0.\\n            require(denominator > prod1);\\n\\n            ///////////////////////////////////////////////\\n            // 512 by 256 division.\\n            ///////////////////////////////////////////////\\n\\n            // Make division exact by subtracting the remainder from [prod1 prod0].\\n            uint256 remainder;\\n            assembly {\\n                // Compute remainder using mulmod.\\n                remainder := mulmod(x, y, denominator)\\n\\n                // Subtract 256 bit number from 512 bit number.\\n                prod1 := sub(prod1, gt(remainder, prod0))\\n                prod0 := sub(prod0, remainder)\\n            }\\n\\n            // Factor powers of two out of denominator and compute largest power of two divisor of denominator. Always >= 1.\\n            // See https://cs.stackexchange.com/q/138556/92363.\\n\\n            // Does not overflow because the denominator cannot be zero at this stage in the function.\\n            uint256 twos = denominator & (~denominator + 1);\\n            assembly {\\n                // Divide denominator by twos.\\n                denominator := div(denominator, twos)\\n\\n                // Divide [prod1 prod0] by twos.\\n                prod0 := div(prod0, twos)\\n\\n                // Flip twos such that it is 2^256 / twos. If twos is zero, then it becomes one.\\n                twos := add(div(sub(0, twos), twos), 1)\\n            }\\n\\n            // Shift in bits from prod1 into prod0.\\n            prod0 |= prod1 * twos;\\n\\n            // Invert denominator mod 2^256. Now that denominator is an odd number, it has an inverse modulo 2^256 such\\n            // that denominator * inv = 1 mod 2^256. Compute the inverse by starting with a seed that is correct for\\n            // four bits. That is, denominator * inv = 1 mod 2^4.\\n            uint256 inverse = (3 * denominator) ^ 2;\\n\\n            // Use the Newton-Raphson iteration to improve the precision. Thanks to Hensel's lifting lemma, this also works\\n            // in modular arithmetic, doubling the correct bits in each step.\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^8\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^16\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^32\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^64\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^128\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^256\\n\\n            // Because the division is now exact we can divide by multiplying with the modular inverse of denominator.\\n            // This will give us the correct result modulo 2^256. Since the preconditions guarantee that the outcome is\\n            // less than 2^256, this is the final result. We don't need to compute the high bits of the result and prod1\\n            // is no longer required.\\n            result = prod0 * inverse;\\n            return result;\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates x * y / denominator with full precision, following the selected rounding direction.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator,\\n        Rounding rounding\\n    ) internal pure returns (uint256) {\\n        uint256 result = mulDiv(x, y, denominator);\\n        if (rounding == Rounding.Up && mulmod(x, y, denominator) > 0) {\\n            result += 1;\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Returns the square root of a number. If the number is not a perfect square, the value is rounded down.\\n     *\\n     * Inspired by Henry S. Warren, Jr.'s \\\"Hacker's Delight\\\" (Chapter 11).\\n     */\\n    function sqrt(uint256 a) internal pure returns (uint256) {\\n        if (a == 0) {\\n            return 0;\\n        }\\n\\n        // For our first guess, we get the biggest power of 2 which is smaller than the square root of the target.\\n        //\\n        // We know that the \\\"msb\\\" (most significant bit) of our target number `a` is a power of 2 such that we have\\n        // `msb(a) <= a < 2*msb(a)`. This value can be written `msb(a)=2**k` with `k=log2(a)`.\\n        //\\n        // This can be rewritten `2**log2(a) <= a < 2**(log2(a) + 1)`\\n        // \\u2192 `sqrt(2**k) <= sqrt(a) < sqrt(2**(k+1))`\\n        // \\u2192 `2**(k/2) <= sqrt(a) < 2**((k+1)/2) <= 2**(k/2 + 1)`\\n        //\\n        // Consequently, `2**(log2(a) / 2)` is a good first approximation of `sqrt(a)` with at least 1 correct bit.\\n        uint256 result = 1 << (log2(a) >> 1);\\n\\n        // At this point `result` is an estimation with one bit of precision. We know the true value is a uint128,\\n        // since it is the square root of a uint256. Newton's method converges quadratically (precision doubles at\\n        // every iteration). We thus need at most 7 iteration to turn our partial result with one bit of precision\\n        // into the expected uint128 result.\\n        unchecked {\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            return min(result, a / result);\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates sqrt(a), following the selected rounding direction.\\n     */\\n    function sqrt(uint256 a, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = sqrt(a);\\n            return result + (rounding == Rounding.Up && result * result < a ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 128;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 64;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 32;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 16;\\n            }\\n            if (value >> 8 > 0) {\\n                value >>= 8;\\n                result += 8;\\n            }\\n            if (value >> 4 > 0) {\\n                value >>= 4;\\n                result += 4;\\n            }\\n            if (value >> 2 > 0) {\\n                value >>= 2;\\n                result += 2;\\n            }\\n            if (value >> 1 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log2(value);\\n            return result + (rounding == Rounding.Up && 1 << result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >= 10**64) {\\n                value /= 10**64;\\n                result += 64;\\n            }\\n            if (value >= 10**32) {\\n                value /= 10**32;\\n                result += 32;\\n            }\\n            if (value >= 10**16) {\\n                value /= 10**16;\\n                result += 16;\\n            }\\n            if (value >= 10**8) {\\n                value /= 10**8;\\n                result += 8;\\n            }\\n            if (value >= 10**4) {\\n                value /= 10**4;\\n                result += 4;\\n            }\\n            if (value >= 10**2) {\\n                value /= 10**2;\\n                result += 2;\\n            }\\n            if (value >= 10**1) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log10(value);\\n            return result + (rounding == Rounding.Up && 10**result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 256, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     *\\n     * Adding one to the result gives the number of pairs of hex symbols needed to represent `value` as a hex string.\\n     */\\n    function log256(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 16;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 8;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 4;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 2;\\n            }\\n            if (value >> 8 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log256(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log256(value);\\n            return result + (rounding == Rounding.Up && 1 << (result * 8) < value ? 1 : 0);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\"},\"src/GlobalEntryForwarder/GlobalEntryForwarder.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity ^0.8.17;\\n\\n/*\\n.                                                                                                                                          .\\n.  .cxxo.                 ;dxxo:cdxxdxxxxxo::dxxc.   .ldxxxdxxxxxo' 'oxxxxxxxxxxxl.   .cdxxl.      .ldxxxxxxo::dxxxxxxxxo:cdxxxxxxxxxd:.   .\\n.  .OMMX;               .dNMMXkONMMMMMMMMXkONMMM0'  ;0WMMMWMMWMWKc'cKWMMMMMMMMMW0;   ,kWMW0;      ;0WMMMMMMXkONMMMMMMMWXkONMMMMMMMMMNx'    .\\n.  .OMMX;    .,,,.     ;OWMW0kKWMWXXWMMW0k0WMMMM0'.oXMWXdcccccc:''xNMWWKocccccc:.  .cKWMNx.     .oXMMXxcccldKWMWXXWWMW0k0WMWOlcccccc;.     .\\n.  .OMMX:   ;ONWWk.  .lXWMNOkXWMN0KNWMNOkXWWMMWM0lkWMMW0occcccc,:0WWWNXOlcccccc.  .xNMWKc.     'kWMW0;   .lXWMNKKNWWXxxXWMMXxcccccc:.      .\\n.  .OMMX: .oXMMMMO. 'kWMWKk0NMMWNNWMWKk0NMW0ONMM0kXMMMMMMMMMMMWOkWMMMMWMMMMMMMWl.:0WMWk'     .cKWMWk'   'kWMMMNNWMW0:'kMMMMMMMMMMMMX;      .\\n.  .OMMX:,kWMMMMMO,cKWMNOkKWMMMMMMWXOkKWMNx':XMM0ooxxxxxxONMMMNocdxxxxxxx0WMMMXodXMMXo.     .xNMMMW0kxclKWMMMMMMWXx. .cxxxxxxkKWMMWO'      .\\n.  .OMMN0KWMNNWMMX0NMWXkONMMKx0WMM0okNMMKl. ;XMM0:',,.  'xNMWKc..','.   ,OWMWKk0WMW0;      ;0WMMWWWWXkONMWKxOWMMO;.'''.     .cKWMNx'       .\\n.  .OMMMMMWKloNMMMMMW0kKWMWO, lNMMXXWMWO,   ;XMM0kKNNk';0WMWk,  lXNNo..lKWMNOkXMMNd.     .oXMMXd:::cdKWMWO, cNMMx.oNNNo    .dNMMXl.        .\\n.  .OMMMMWO, :NMMWWXkkXWMXo.  lNMMMMMXo.    ;XMM0kNMMXOXMWXo.   oWMWK0KNMWKkONWMWXdllll;;kWMMWKdlllxXMMXo.  cNMWx'dWMW0ollo0WMWO,          .\\n.  .OMMMXo.  :NMMWKk0WMW0;    lNMMWW0;      ;XMM0kNMMMMMW0;     oWMMMMMMN0kKWMMMMMMMMNOkXWMMMMMMMMMMMW0;    cNMMx'dWMMMMMMMMWXo.           .\\n.  .:ooo,    .looc;:oooc.     'ooool.       .looc:loooooc.      ,ooooooo:;coooooooooo:;loooooooooooooc.     'loo;.,oooooooooo;             .\\n.                                                                                                                                          .*/\\n\\nimport \\\"@0xessential/contracts/fwd/EssentialForwarder.sol\\\";\\n\\ncontract GlobalEntryForwarder is EssentialForwarder {\\n    constructor(string[] memory _urls) EssentialForwarder(\\\"GlobalEntryForwarder\\\", _urls) {}\\n}\\n\",\"keccak256\":\"0x9346efe5b0a38ab4d28f3f67e44a88c41b396cb2d84052f1da53a69d846843bc\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6101206040523480156200001257600080fd5b506040516200287338038062002873833981016040819052620000359162000361565b604080518082018252601481527f476c6f62616c456e747279466f727761726465720000000000000000000000006020808301918252835180850185526005815264302e302e3160d81b90820152825190912060c08181527fae209a0b48f21c054280f2455d32cf309387644879d9acbd8ffc19916381188560e08190524660a081815287517f36c25de3e541d5d970f66e4210d728721220fff5c077cc6cd008b3a0c62adab7818801819052818a019690965260608101939093523060808085019190915283820192909252875180840390910181529190920190955284519490920193909320905261010091909152816200013460003362000191565b620001607fa49807205ce4d355092ef5a8a18f56e8913cf4a201fbe287825b095693c217753362000191565b600180546001600160a01b0319163317905580516200018790600390602084019062000241565b5050505062000600565b6200019d8282620001a1565b5050565b6000828152602081815260408083206001600160a01b038516845290915290205460ff166200019d576000828152602081815260408083206001600160a01b03851684529091529020805460ff19166001179055620001fd3390565b6001600160a01b0316816001600160a01b0316837f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d60405160405180910390a45050565b8280548282559060005260206000209081019282156200028c579160200282015b828111156200028c57825182906200027b908262000534565b509160200191906001019062000262565b506200029a9291506200029e565b5090565b808211156200029a576000620002b58282620002bf565b506001016200029e565b508054620002cd90620004a5565b6000825580601f10620002de575050565b601f016020900490600052602060002090810190620002fe919062000301565b50565b5b808211156200029a576000815560010162000302565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f191681016001600160401b038111828210171562000359576200035962000318565b604052919050565b600060208083850312156200037557600080fd5b82516001600160401b03808211156200038d57600080fd5b8185019150601f8681840112620003a357600080fd5b825182811115620003b857620003b862000318565b8060051b620003c98682016200032e565b918252848101860191868101908a841115620003e457600080fd5b87870192505b838310156200049757825186811115620004045760008081fd5b8701603f81018c13620004175760008081fd5b88810151878111156200042e576200042e62000318565b62000441818801601f19168b016200032e565b81815260408e81848601011115620004595760008081fd5b60005b8381101562000479578481018201518382018e01528c016200045c565b505060009181018b01919091528352509187019190870190620003ea565b9a9950505050505050505050565b600181811c90821680620004ba57607f821691505b602082108103620004db57634e487b7160e01b600052602260045260246000fd5b50919050565b601f8211156200052f57600081815260208120601f850160051c810160208610156200050a5750805b601f850160051c820191505b818110156200052b5782815560010162000516565b5050505b505050565b81516001600160401b0381111562000550576200055062000318565b6200056881620005618454620004a5565b84620004e1565b602080601f831160018114620005a05760008415620005875750858301515b600019600386901b1c1916600185901b1785556200052b565b600085815260208120601f198616915b82811015620005d157888601518255948401946001909101908401620005b0565b5085821015620005f05787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60805160a05160c05160e0516101005161222e620006456000396000610803015260006108520152600061082d015260006107b2015260006107da015261222e6000f3fe60806040526004361061014b5760003560e01c8063796676be116100b6578063a217fddf1161006f578063a217fddf146103f6578063d547741f1461040b578063d66df8f01461042b578063dbf0eeef1461044b578063dbf42df71461046c578063f2cde3ef1461047f57600080fd5b8063796676be146103345780637b134b4c1461036157806381902564146103765780638c4a7b1b1461039657806391d14854146103b657806395cb1c2d146103d657600080fd5b806336568abe1161010857806336568abe146102605780634254188c146102805780635c0dfff6146102a057806365e4ad9e146102c057806373aa9e94146102e057806375b238fc1461030057600080fd5b806301ffc9a71461015057806312ce42fd14610185578063248a9ca3146101b75780632d0335ab146101f55780632f2ff15d1461022b5780633408e4701461024d575b600080fd5b34801561015c57600080fd5b5061017061016b3660046116f3565b61049f565b60405190151581526020015b60405180910390f35b34801561019157600080fd5b506001546001600160a01b03165b6040516001600160a01b03909116815260200161017c565b3480156101c357600080fd5b506101e76101d236600461171d565b60009081526020819052604090206001015490565b60405190815260200161017c565b34801561020157600080fd5b506101e7610210366004611752565b6001600160a01b031660009081526002602052604090205490565b34801561023757600080fd5b5061024b61024636600461176d565b6104d6565b005b34801561025957600080fd5b50466101e7565b34801561026c57600080fd5b5061024b61027b36600461176d565b610500565b34801561028c57600080fd5b5061024b61029b366004611752565b610583565b3480156102ac57600080fd5b506101e76102bb366004611799565b6105ee565b3480156102cc57600080fd5b506101706102db366004611803565b610632565b3480156102ec57600080fd5b5061024b6102fb366004611752565b6106b5565b34801561030c57600080fd5b506101e77fa49807205ce4d355092ef5a8a18f56e8913cf4a201fbe287825b095693c2177581565b34801561034057600080fd5b5061035461034f36600461171d565b610702565b60405161017c919061187d565b34801561036d57600080fd5b506101e76107ae565b34801561038257600080fd5b50610170610391366004611a2c565b6108a0565b3480156103a257600080fd5b506101706103b1366004611adb565b610990565b3480156103c257600080fd5b506101706103d136600461176d565b6109e2565b3480156103e257600080fd5b5061024b6103f1366004611adb565b610a0b565b34801561040257600080fd5b506101e7600081565b34801561041757600080fd5b5061024b61042636600461176d565b610b0a565b34801561043757600080fd5b5060045461019f906001600160a01b031681565b61045e610459366004611b4d565b610b2f565b60405161017c929190611bb9565b61045e61047a366004611adb565b610cfc565b34801561048b57600080fd5b5061024b61049a366004611752565b610f04565b60006001600160e01b03198216637965db0b60e01b14806104d057506301ffc9a760e01b6001600160e01b03198316145b92915050565b6000828152602081905260409020600101546104f181610f4d565b6104fb8383610f5a565b505050565b6001600160a01b03811633146105755760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b61057f8282610fde565b5050565b60048054604051630d0bdc7d60e31b81526001600160a01b03848116938201939093526001602482015291169063685ee3e890604401600060405180830381600087803b1580156105d357600080fd5b505af11580156105e7573d6000803e3d6000fd5b5050505050565b6000878787878787468860405160200161060f989796959493929190611bd4565b604051602081830303815290604052805190602001209050979650505050505050565b60048054604051634e1cade160e11b81526001600160a01b0384811693820193909352848316602482015260009290911690639c395bc290604401602060405180830381865afa15801561068a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106ae9190611c1f565b9392505050565b7fa49807205ce4d355092ef5a8a18f56e8913cf4a201fbe287825b095693c217756106df81610f4d565b50600480546001600160a01b0319166001600160a01b0392909216919091179055565b6003818154811061071257600080fd5b90600052602060002001600091509050805461072d90611c41565b80601f016020809104026020016040519081016040528092919081815260200182805461075990611c41565b80156107a65780601f1061077b576101008083540402835291602001916107a6565b820191906000526020600020905b81548152906001019060200180831161078957829003601f168201915b505050505081565b60007f000000000000000000000000000000000000000000000000000000000000000046036107fc57507f000000000000000000000000000000000000000000000000000000000000000090565b50604080517f00000000000000000000000000000000000000000000000000000000000000006020808301919091527f0000000000000000000000000000000000000000000000000000000000000000828401527f000000000000000000000000000000000000000000000000000000000000000060608301523060808301524660a0808401919091528351808403909101815260c0909201909252805191012090565b60006102586108af8342611c91565b106108e45760405162461bcd60e51b81526020600482015260056024820152645374616c6560d81b604482015260640161056c565b6000610964610911866000015187602001518861012001518960a001518a606001518b608001518a6105ee565b6040517f19457468657265756d205369676e6564204d6573736167653a0a3332000000006020820152603c8101829052600090605c01604051602081830303815290604052805190602001209050919050565b6001549091506001600160a01b031661097d8286611043565b6001600160a01b03161495945050505050565b60006109da61099e85611ca4565b84848080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525061106792505050565b949350505050565b6000918252602082815260408084206001600160a01b0393909316845291905290205460ff1690565b610a16838383610990565b610a3357604051638baa579f60e01b815260040160405180910390fd5b306003610a436020860186611752565b610a536040870160208801611752565b60026000610a6460208a018a611752565b6001600160a01b0316815260208101919091526040016000205460a0880135610a9360808a0160608b01611752565b89608001354642604051602001610ab1989796959493929190611bd4565b60405160208183030381529060405263dbf0eeef60e01b42878787604051602001610adf9493929190611d1f565b60408051601f1981840301815290829052630556f18360e41b825261056c9594939291600401611e24565b600082815260208190526040902060010154610b2581610f4d565b6104fb8383610fde565b60006060818080610b4286880188611f68565b925092509250610b51826111a6565b610b6d576040516282b42960e81b815260040160405180910390fd5b610b778282611067565b610b9457604051638baa579f60e01b815260040160405180910390fd5b610bd6828a8a8080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152508892506108a0915050565b610bf357604051630f1f82e960e31b815260040160405180910390fd5b81516001600160a01b031660009081526002602052604081208054909190610c1a90611fd5565b9190508190555060008083604001516001600160a01b031684610100015160008661014001518760a00151886080015189606001518a60200151604051602001610c68959493929190611fee565b60408051601f1981840301815290829052610c829161203b565b600060405180830381858888f193505050503d8060008114610cc0576040519150601f19603f3d011682016040523d82523d6000602084013e610cc5565b606091505b5091509150603f846101000151610cdc9190612057565b5a11610cea57610cea612079565b90955093505050505b94509492505050565b60006060610d48610d0c86611ca4565b85858080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525061106792505050565b610d6557604051638baa579f60e01b815260040160405180910390fd5b610d756040860160208701611752565b6001600160a01b0316610d8b6020870187611752565b6001600160a01b031614158015610db05750610dae610da986611ca4565b6111a6565b155b15610dcd576040516282b42960e81b815260040160405180910390fd5b610ddd610120860135600161208f565b60026000610dee6020890189611752565b6001600160a01b03166001600160a01b0316815260200190815260200160002081905550600080866040016020810190610e289190611752565b6001600160a01b031661010088013560e0890135610e4a6101408b018b6120a2565b60008060008e6020016020810190610e629190611752565b604051602001610e77969594939291906120e9565b60408051601f1981840301815290829052610e919161203b565b600060405180830381858888f193505050503d8060008114610ecf576040519150601f19603f3d011682016040523d82523d6000602084013e610ed4565b606091505b509092509050610eea603f610100890135612057565b5a11610ef857610ef8612079565b90969095509350505050565b7fa49807205ce4d355092ef5a8a18f56e8913cf4a201fbe287825b095693c21775610f2e81610f4d565b600180546001600160a01b0319166001600160a01b0384161790555050565b610f57813361124e565b50565b610f6482826109e2565b61057f576000828152602081815260408083206001600160a01b03851684529091529020805460ff19166001179055610f9a3390565b6001600160a01b0316816001600160a01b0316837f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d60405160405180910390a45050565b610fe882826109e2565b1561057f576000828152602081815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600080600061105285856112a7565b9150915061105f816112ec565b509392505050565b6000806111548361114e7f43fa348c6c9d3f16a4580fbb7f1b7f0432ed8cdc844564275311b61f50661ea08760400151886000015189602001518a606001518b61012001518c60a001518d608001518e60c001518f6101400151805190602001206040516020016111339a99989796959493929190998a526001600160a01b0398891660208b015296881660408a0152948716606089015292909516608087015260a086015260c085019390935260e08401929092526101008301919091526101208201526101400190565b60405160208183030381529060405280519060200120611436565b90611043565b61012085015185516001600160a01b0316600090815260026020526040902054919250148015611190575083516001600160a01b038281169116145b80156109da5750468460c0015114949350505050565b600081600001516001600160a01b031682602001516001600160a01b0316036111d157506001919050565b6004805483516020850151604051634e1cade160e11b81526001600160a01b0392831694810194909452811660248401521690639c395bc290604401602060405180830381865afa15801561122a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104d09190611c1f565b61125882826109e2565b61057f5761126581611484565b611270836020611496565b604051602001611281929190612129565b60408051601f198184030181529082905262461bcd60e51b825261056c9160040161187d565b60008082516041036112dd5760208301516040840151606085015160001a6112d187828585611632565b945094505050506112e5565b506000905060025b9250929050565b60008160048111156113005761130061219e565b036113085750565b600181600481111561131c5761131c61219e565b036113695760405162461bcd60e51b815260206004820152601860248201527f45434453413a20696e76616c6964207369676e61747572650000000000000000604482015260640161056c565b600281600481111561137d5761137d61219e565b036113ca5760405162461bcd60e51b815260206004820152601f60248201527f45434453413a20696e76616c6964207369676e6174757265206c656e67746800604482015260640161056c565b60038160048111156113de576113de61219e565b03610f575760405162461bcd60e51b815260206004820152602260248201527f45434453413a20696e76616c6964207369676e6174757265202773272076616c604482015261756560f01b606482015260840161056c565b60006104d06114436107ae565b8360405161190160f01b6020820152602281018390526042810182905260009060620160405160208183030381529060405280519060200120905092915050565b60606104d06001600160a01b03831660145b606060006114a58360026121b4565b6114b090600261208f565b67ffffffffffffffff8111156114c8576114c8611890565b6040519080825280601f01601f1916602001820160405280156114f2576020820181803683370190505b509050600360fc1b8160008151811061150d5761150d6121cb565b60200101906001600160f81b031916908160001a905350600f60fb1b8160018151811061153c5761153c6121cb565b60200101906001600160f81b031916908160001a90535060006115608460026121b4565b61156b90600161208f565b90505b60018111156115e3576f181899199a1a9b1b9c1cb0b131b232b360811b85600f166010811061159f5761159f6121cb565b1a60f81b8282815181106115b5576115b56121cb565b60200101906001600160f81b031916908160001a90535060049490941c936115dc816121e1565b905061156e565b5083156106ae5760405162461bcd60e51b815260206004820181905260248201527f537472696e67733a20686578206c656e67746820696e73756666696369656e74604482015260640161056c565b6000807f7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a08311156116695750600090506003610cf3565b6040805160008082526020820180845289905260ff881692820192909252606081018690526080810185905260019060a0016020604051602081039080840390855afa1580156116bd573d6000803e3d6000fd5b5050604051601f1901519150506001600160a01b0381166116e657600060019250925050610cf3565b9660009650945050505050565b60006020828403121561170557600080fd5b81356001600160e01b0319811681146106ae57600080fd5b60006020828403121561172f57600080fd5b5035919050565b80356001600160a01b038116811461174d57600080fd5b919050565b60006020828403121561176457600080fd5b6106ae82611736565b6000806040838503121561178057600080fd5b8235915061179060208401611736565b90509250929050565b600080600080600080600060e0888a0312156117b457600080fd5b6117bd88611736565b96506117cb60208901611736565b955060408801359450606088013593506117e760808901611736565b925060a0880135915060c0880135905092959891949750929550565b6000806040838503121561181657600080fd5b61181f83611736565b915061179060208401611736565b60005b83811015611848578181015183820152602001611830565b50506000910152565b6000815180845261186981602086016020860161182d565b601f01601f19169290920160200192915050565b6020815260006106ae6020830184611851565b634e487b7160e01b600052604160045260246000fd5b604051610160810167ffffffffffffffff811182821017156118ca576118ca611890565b60405290565b600082601f8301126118e157600080fd5b813567ffffffffffffffff808211156118fc576118fc611890565b604051601f8301601f19908116603f0116810190828211818310171561192457611924611890565b8160405283815286602085880101111561193d57600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000610160828403121561197057600080fd5b6119786118a6565b905061198382611736565b815261199160208301611736565b60208201526119a260408301611736565b60408201526119b360608301611736565b60608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e08201526101008083013581830152506101208083013581830152506101408083013567ffffffffffffffff811115611a1457600080fd5b611a20858286016118d0565b82840152505092915050565b600080600060608486031215611a4157600080fd5b833567ffffffffffffffff80821115611a5957600080fd5b611a658783880161195d565b94506020860135915080821115611a7b57600080fd5b50611a88868287016118d0565b925050604084013590509250925092565b60008083601f840112611aab57600080fd5b50813567ffffffffffffffff811115611ac357600080fd5b6020830191508360208285010111156112e557600080fd5b600080600060408486031215611af057600080fd5b833567ffffffffffffffff80821115611b0857600080fd5b908501906101608288031215611b1d57600080fd5b90935060208501359080821115611b3357600080fd5b50611b4086828701611a99565b9497909650939450505050565b60008060008060408587031215611b6357600080fd5b843567ffffffffffffffff80821115611b7b57600080fd5b611b8788838901611a99565b90965094506020870135915080821115611ba057600080fd5b50611bad87828801611a99565b95989497509550505050565b82151581526040602082015260006109da6040830184611851565b6001600160a01b0398891681529688166020880152604087019590955260608601939093529416608084015260a083019390935260c082019290925260e08101919091526101000190565b600060208284031215611c3157600080fd5b815180151581146106ae57600080fd5b600181811c90821680611c5557607f821691505b602082108103611c7557634e487b7160e01b600052602260045260246000fd5b50919050565b634e487b7160e01b600052601160045260246000fd5b818103818111156104d0576104d0611c7b565b60006104d0368361195d565b6000808335601e19843603018112611cc757600080fd5b830160208101925035905067ffffffffffffffff811115611ce757600080fd5b8036038213156112e557600080fd5b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b84815260606020820152611d4660608201611d3986611736565b6001600160a01b03169052565b6000611d5460208601611736565b6001600160a01b03166080830152611d6e60408601611736565b6001600160a01b031660a0830152611d8860608601611736565b6001600160a01b03811660c084015250608085013560e083015261010060a08601358184015261012060c08701358185015261014060e088013581860152610160838901358187015282890135610180870152611de7828a018a611cb0565b94509250806101a08701525050611e036101c085018383611cf6565b9150508281036040840152611e19818587611cf6565b979650505050505050565b600060a0820160018060a01b0388168352602060a08185015281885480845260c0860191506005935060c081851b87010160008b8152848120815b84811015611f195789840360bf1901865281548390600181811c9080831680611e8957607f831692505b8b83108103611ea657634e487b7160e01b88526022600452602488fd5b82895260208901818015611ec15760018114611ed657611f00565b60ff19861682528415158f1b82019650611f00565b6000898152602090208a5b86811015611efa57815484820152908501908f01611ee1565b83019750505b505050988a019892965050509190910190600101611e5f565b5050508681036040880152611f2e818b611851565b945050505050611f4a60608401866001600160e01b0319169052565b8281036080840152611f5c8185611851565b98975050505050505050565b600080600060608486031215611f7d57600080fd5b83359250602084013567ffffffffffffffff80821115611f9c57600080fd5b611fa88783880161195d565b93506040860135915080821115611fbe57600080fd5b50611fcb868287016118d0565b9150509250925092565b600060018201611fe757611fe7611c7b565b5060010190565b60008651612000818460208b0161182d565b919091019485525060208401929092526bffffffffffffffffffffffff19606091821b8116604085015291901b166054820152606801919050565b6000825161204d81846020870161182d565b9190910192915050565b60008261207457634e487b7160e01b600052601260045260246000fd5b500490565b634e487b7160e01b600052600160045260246000fd5b808201808211156104d0576104d0611c7b565b6000808335601e198436030181126120b957600080fd5b83018035915067ffffffffffffffff8211156120d457600080fd5b6020019150368190038213156112e557600080fd5b858782379094019283526020830191909152606090811b6bffffffffffffffffffffffff19908116604084015292901b9091166054820152606801919050565b7f416363657373436f6e74726f6c3a206163636f756e742000000000000000000081526000835161216181601785016020880161182d565b7001034b99036b4b9b9b4b733903937b6329607d1b601791840191820152835161219281602884016020880161182d565b01602801949350505050565b634e487b7160e01b600052602160045260246000fd5b80820281158282048414176104d0576104d0611c7b565b634e487b7160e01b600052603260045260246000fd5b6000816121f0576121f0611c7b565b50600019019056fea2646970667358221220bc29d1f41dc051b4bc746d137deba22e559a327bf95a8ad8cb1bf5cbf7a6a26f64736f6c63430008110033",
+  "deployedBytecode": "0x60806040526004361061014b5760003560e01c8063796676be116100b6578063a217fddf1161006f578063a217fddf146103f6578063d547741f1461040b578063d66df8f01461042b578063dbf0eeef1461044b578063dbf42df71461046c578063f2cde3ef1461047f57600080fd5b8063796676be146103345780637b134b4c1461036157806381902564146103765780638c4a7b1b1461039657806391d14854146103b657806395cb1c2d146103d657600080fd5b806336568abe1161010857806336568abe146102605780634254188c146102805780635c0dfff6146102a057806365e4ad9e146102c057806373aa9e94146102e057806375b238fc1461030057600080fd5b806301ffc9a71461015057806312ce42fd14610185578063248a9ca3146101b75780632d0335ab146101f55780632f2ff15d1461022b5780633408e4701461024d575b600080fd5b34801561015c57600080fd5b5061017061016b3660046116f3565b61049f565b60405190151581526020015b60405180910390f35b34801561019157600080fd5b506001546001600160a01b03165b6040516001600160a01b03909116815260200161017c565b3480156101c357600080fd5b506101e76101d236600461171d565b60009081526020819052604090206001015490565b60405190815260200161017c565b34801561020157600080fd5b506101e7610210366004611752565b6001600160a01b031660009081526002602052604090205490565b34801561023757600080fd5b5061024b61024636600461176d565b6104d6565b005b34801561025957600080fd5b50466101e7565b34801561026c57600080fd5b5061024b61027b36600461176d565b610500565b34801561028c57600080fd5b5061024b61029b366004611752565b610583565b3480156102ac57600080fd5b506101e76102bb366004611799565b6105ee565b3480156102cc57600080fd5b506101706102db366004611803565b610632565b3480156102ec57600080fd5b5061024b6102fb366004611752565b6106b5565b34801561030c57600080fd5b506101e77fa49807205ce4d355092ef5a8a18f56e8913cf4a201fbe287825b095693c2177581565b34801561034057600080fd5b5061035461034f36600461171d565b610702565b60405161017c919061187d565b34801561036d57600080fd5b506101e76107ae565b34801561038257600080fd5b50610170610391366004611a2c565b6108a0565b3480156103a257600080fd5b506101706103b1366004611adb565b610990565b3480156103c257600080fd5b506101706103d136600461176d565b6109e2565b3480156103e257600080fd5b5061024b6103f1366004611adb565b610a0b565b34801561040257600080fd5b506101e7600081565b34801561041757600080fd5b5061024b61042636600461176d565b610b0a565b34801561043757600080fd5b5060045461019f906001600160a01b031681565b61045e610459366004611b4d565b610b2f565b60405161017c929190611bb9565b61045e61047a366004611adb565b610cfc565b34801561048b57600080fd5b5061024b61049a366004611752565b610f04565b60006001600160e01b03198216637965db0b60e01b14806104d057506301ffc9a760e01b6001600160e01b03198316145b92915050565b6000828152602081905260409020600101546104f181610f4d565b6104fb8383610f5a565b505050565b6001600160a01b03811633146105755760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b61057f8282610fde565b5050565b60048054604051630d0bdc7d60e31b81526001600160a01b03848116938201939093526001602482015291169063685ee3e890604401600060405180830381600087803b1580156105d357600080fd5b505af11580156105e7573d6000803e3d6000fd5b5050505050565b6000878787878787468860405160200161060f989796959493929190611bd4565b604051602081830303815290604052805190602001209050979650505050505050565b60048054604051634e1cade160e11b81526001600160a01b0384811693820193909352848316602482015260009290911690639c395bc290604401602060405180830381865afa15801561068a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106ae9190611c1f565b9392505050565b7fa49807205ce4d355092ef5a8a18f56e8913cf4a201fbe287825b095693c217756106df81610f4d565b50600480546001600160a01b0319166001600160a01b0392909216919091179055565b6003818154811061071257600080fd5b90600052602060002001600091509050805461072d90611c41565b80601f016020809104026020016040519081016040528092919081815260200182805461075990611c41565b80156107a65780601f1061077b576101008083540402835291602001916107a6565b820191906000526020600020905b81548152906001019060200180831161078957829003601f168201915b505050505081565b60007f000000000000000000000000000000000000000000000000000000000000000046036107fc57507f000000000000000000000000000000000000000000000000000000000000000090565b50604080517f00000000000000000000000000000000000000000000000000000000000000006020808301919091527f0000000000000000000000000000000000000000000000000000000000000000828401527f000000000000000000000000000000000000000000000000000000000000000060608301523060808301524660a0808401919091528351808403909101815260c0909201909252805191012090565b60006102586108af8342611c91565b106108e45760405162461bcd60e51b81526020600482015260056024820152645374616c6560d81b604482015260640161056c565b6000610964610911866000015187602001518861012001518960a001518a606001518b608001518a6105ee565b6040517f19457468657265756d205369676e6564204d6573736167653a0a3332000000006020820152603c8101829052600090605c01604051602081830303815290604052805190602001209050919050565b6001549091506001600160a01b031661097d8286611043565b6001600160a01b03161495945050505050565b60006109da61099e85611ca4565b84848080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525061106792505050565b949350505050565b6000918252602082815260408084206001600160a01b0393909316845291905290205460ff1690565b610a16838383610990565b610a3357604051638baa579f60e01b815260040160405180910390fd5b306003610a436020860186611752565b610a536040870160208801611752565b60026000610a6460208a018a611752565b6001600160a01b0316815260208101919091526040016000205460a0880135610a9360808a0160608b01611752565b89608001354642604051602001610ab1989796959493929190611bd4565b60405160208183030381529060405263dbf0eeef60e01b42878787604051602001610adf9493929190611d1f565b60408051601f1981840301815290829052630556f18360e41b825261056c9594939291600401611e24565b600082815260208190526040902060010154610b2581610f4d565b6104fb8383610fde565b60006060818080610b4286880188611f68565b925092509250610b51826111a6565b610b6d576040516282b42960e81b815260040160405180910390fd5b610b778282611067565b610b9457604051638baa579f60e01b815260040160405180910390fd5b610bd6828a8a8080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152508892506108a0915050565b610bf357604051630f1f82e960e31b815260040160405180910390fd5b81516001600160a01b031660009081526002602052604081208054909190610c1a90611fd5565b9190508190555060008083604001516001600160a01b031684610100015160008661014001518760a00151886080015189606001518a60200151604051602001610c68959493929190611fee565b60408051601f1981840301815290829052610c829161203b565b600060405180830381858888f193505050503d8060008114610cc0576040519150601f19603f3d011682016040523d82523d6000602084013e610cc5565b606091505b5091509150603f846101000151610cdc9190612057565b5a11610cea57610cea612079565b90955093505050505b94509492505050565b60006060610d48610d0c86611ca4565b85858080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525061106792505050565b610d6557604051638baa579f60e01b815260040160405180910390fd5b610d756040860160208701611752565b6001600160a01b0316610d8b6020870187611752565b6001600160a01b031614158015610db05750610dae610da986611ca4565b6111a6565b155b15610dcd576040516282b42960e81b815260040160405180910390fd5b610ddd610120860135600161208f565b60026000610dee6020890189611752565b6001600160a01b03166001600160a01b0316815260200190815260200160002081905550600080866040016020810190610e289190611752565b6001600160a01b031661010088013560e0890135610e4a6101408b018b6120a2565b60008060008e6020016020810190610e629190611752565b604051602001610e77969594939291906120e9565b60408051601f1981840301815290829052610e919161203b565b600060405180830381858888f193505050503d8060008114610ecf576040519150601f19603f3d011682016040523d82523d6000602084013e610ed4565b606091505b509092509050610eea603f610100890135612057565b5a11610ef857610ef8612079565b90969095509350505050565b7fa49807205ce4d355092ef5a8a18f56e8913cf4a201fbe287825b095693c21775610f2e81610f4d565b600180546001600160a01b0319166001600160a01b0384161790555050565b610f57813361124e565b50565b610f6482826109e2565b61057f576000828152602081815260408083206001600160a01b03851684529091529020805460ff19166001179055610f9a3390565b6001600160a01b0316816001600160a01b0316837f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d60405160405180910390a45050565b610fe882826109e2565b1561057f576000828152602081815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600080600061105285856112a7565b9150915061105f816112ec565b509392505050565b6000806111548361114e7f43fa348c6c9d3f16a4580fbb7f1b7f0432ed8cdc844564275311b61f50661ea08760400151886000015189602001518a606001518b61012001518c60a001518d608001518e60c001518f6101400151805190602001206040516020016111339a99989796959493929190998a526001600160a01b0398891660208b015296881660408a0152948716606089015292909516608087015260a086015260c085019390935260e08401929092526101008301919091526101208201526101400190565b60405160208183030381529060405280519060200120611436565b90611043565b61012085015185516001600160a01b0316600090815260026020526040902054919250148015611190575083516001600160a01b038281169116145b80156109da5750468460c0015114949350505050565b600081600001516001600160a01b031682602001516001600160a01b0316036111d157506001919050565b6004805483516020850151604051634e1cade160e11b81526001600160a01b0392831694810194909452811660248401521690639c395bc290604401602060405180830381865afa15801561122a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104d09190611c1f565b61125882826109e2565b61057f5761126581611484565b611270836020611496565b604051602001611281929190612129565b60408051601f198184030181529082905262461bcd60e51b825261056c9160040161187d565b60008082516041036112dd5760208301516040840151606085015160001a6112d187828585611632565b945094505050506112e5565b506000905060025b9250929050565b60008160048111156113005761130061219e565b036113085750565b600181600481111561131c5761131c61219e565b036113695760405162461bcd60e51b815260206004820152601860248201527f45434453413a20696e76616c6964207369676e61747572650000000000000000604482015260640161056c565b600281600481111561137d5761137d61219e565b036113ca5760405162461bcd60e51b815260206004820152601f60248201527f45434453413a20696e76616c6964207369676e6174757265206c656e67746800604482015260640161056c565b60038160048111156113de576113de61219e565b03610f575760405162461bcd60e51b815260206004820152602260248201527f45434453413a20696e76616c6964207369676e6174757265202773272076616c604482015261756560f01b606482015260840161056c565b60006104d06114436107ae565b8360405161190160f01b6020820152602281018390526042810182905260009060620160405160208183030381529060405280519060200120905092915050565b60606104d06001600160a01b03831660145b606060006114a58360026121b4565b6114b090600261208f565b67ffffffffffffffff8111156114c8576114c8611890565b6040519080825280601f01601f1916602001820160405280156114f2576020820181803683370190505b509050600360fc1b8160008151811061150d5761150d6121cb565b60200101906001600160f81b031916908160001a905350600f60fb1b8160018151811061153c5761153c6121cb565b60200101906001600160f81b031916908160001a90535060006115608460026121b4565b61156b90600161208f565b90505b60018111156115e3576f181899199a1a9b1b9c1cb0b131b232b360811b85600f166010811061159f5761159f6121cb565b1a60f81b8282815181106115b5576115b56121cb565b60200101906001600160f81b031916908160001a90535060049490941c936115dc816121e1565b905061156e565b5083156106ae5760405162461bcd60e51b815260206004820181905260248201527f537472696e67733a20686578206c656e67746820696e73756666696369656e74604482015260640161056c565b6000807f7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a08311156116695750600090506003610cf3565b6040805160008082526020820180845289905260ff881692820192909252606081018690526080810185905260019060a0016020604051602081039080840390855afa1580156116bd573d6000803e3d6000fd5b5050604051601f1901519150506001600160a01b0381166116e657600060019250925050610cf3565b9660009650945050505050565b60006020828403121561170557600080fd5b81356001600160e01b0319811681146106ae57600080fd5b60006020828403121561172f57600080fd5b5035919050565b80356001600160a01b038116811461174d57600080fd5b919050565b60006020828403121561176457600080fd5b6106ae82611736565b6000806040838503121561178057600080fd5b8235915061179060208401611736565b90509250929050565b600080600080600080600060e0888a0312156117b457600080fd5b6117bd88611736565b96506117cb60208901611736565b955060408801359450606088013593506117e760808901611736565b925060a0880135915060c0880135905092959891949750929550565b6000806040838503121561181657600080fd5b61181f83611736565b915061179060208401611736565b60005b83811015611848578181015183820152602001611830565b50506000910152565b6000815180845261186981602086016020860161182d565b601f01601f19169290920160200192915050565b6020815260006106ae6020830184611851565b634e487b7160e01b600052604160045260246000fd5b604051610160810167ffffffffffffffff811182821017156118ca576118ca611890565b60405290565b600082601f8301126118e157600080fd5b813567ffffffffffffffff808211156118fc576118fc611890565b604051601f8301601f19908116603f0116810190828211818310171561192457611924611890565b8160405283815286602085880101111561193d57600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000610160828403121561197057600080fd5b6119786118a6565b905061198382611736565b815261199160208301611736565b60208201526119a260408301611736565b60408201526119b360608301611736565b60608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e08201526101008083013581830152506101208083013581830152506101408083013567ffffffffffffffff811115611a1457600080fd5b611a20858286016118d0565b82840152505092915050565b600080600060608486031215611a4157600080fd5b833567ffffffffffffffff80821115611a5957600080fd5b611a658783880161195d565b94506020860135915080821115611a7b57600080fd5b50611a88868287016118d0565b925050604084013590509250925092565b60008083601f840112611aab57600080fd5b50813567ffffffffffffffff811115611ac357600080fd5b6020830191508360208285010111156112e557600080fd5b600080600060408486031215611af057600080fd5b833567ffffffffffffffff80821115611b0857600080fd5b908501906101608288031215611b1d57600080fd5b90935060208501359080821115611b3357600080fd5b50611b4086828701611a99565b9497909650939450505050565b60008060008060408587031215611b6357600080fd5b843567ffffffffffffffff80821115611b7b57600080fd5b611b8788838901611a99565b90965094506020870135915080821115611ba057600080fd5b50611bad87828801611a99565b95989497509550505050565b82151581526040602082015260006109da6040830184611851565b6001600160a01b0398891681529688166020880152604087019590955260608601939093529416608084015260a083019390935260c082019290925260e08101919091526101000190565b600060208284031215611c3157600080fd5b815180151581146106ae57600080fd5b600181811c90821680611c5557607f821691505b602082108103611c7557634e487b7160e01b600052602260045260246000fd5b50919050565b634e487b7160e01b600052601160045260246000fd5b818103818111156104d0576104d0611c7b565b60006104d0368361195d565b6000808335601e19843603018112611cc757600080fd5b830160208101925035905067ffffffffffffffff811115611ce757600080fd5b8036038213156112e557600080fd5b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b84815260606020820152611d4660608201611d3986611736565b6001600160a01b03169052565b6000611d5460208601611736565b6001600160a01b03166080830152611d6e60408601611736565b6001600160a01b031660a0830152611d8860608601611736565b6001600160a01b03811660c084015250608085013560e083015261010060a08601358184015261012060c08701358185015261014060e088013581860152610160838901358187015282890135610180870152611de7828a018a611cb0565b94509250806101a08701525050611e036101c085018383611cf6565b9150508281036040840152611e19818587611cf6565b979650505050505050565b600060a0820160018060a01b0388168352602060a08185015281885480845260c0860191506005935060c081851b87010160008b8152848120815b84811015611f195789840360bf1901865281548390600181811c9080831680611e8957607f831692505b8b83108103611ea657634e487b7160e01b88526022600452602488fd5b82895260208901818015611ec15760018114611ed657611f00565b60ff19861682528415158f1b82019650611f00565b6000898152602090208a5b86811015611efa57815484820152908501908f01611ee1565b83019750505b505050988a019892965050509190910190600101611e5f565b5050508681036040880152611f2e818b611851565b945050505050611f4a60608401866001600160e01b0319169052565b8281036080840152611f5c8185611851565b98975050505050505050565b600080600060608486031215611f7d57600080fd5b83359250602084013567ffffffffffffffff80821115611f9c57600080fd5b611fa88783880161195d565b93506040860135915080821115611fbe57600080fd5b50611fcb868287016118d0565b9150509250925092565b600060018201611fe757611fe7611c7b565b5060010190565b60008651612000818460208b0161182d565b919091019485525060208401929092526bffffffffffffffffffffffff19606091821b8116604085015291901b166054820152606801919050565b6000825161204d81846020870161182d565b9190910192915050565b60008261207457634e487b7160e01b600052601260045260246000fd5b500490565b634e487b7160e01b600052600160045260246000fd5b808201808211156104d0576104d0611c7b565b6000808335601e198436030181126120b957600080fd5b83018035915067ffffffffffffffff8211156120d457600080fd5b6020019150368190038213156112e557600080fd5b858782379094019283526020830191909152606090811b6bffffffffffffffffffffffff19908116604084015292901b9091166054820152606801919050565b7f416363657373436f6e74726f6c3a206163636f756e742000000000000000000081526000835161216181601785016020880161182d565b7001034b99036b4b9b9b4b733903937b6329607d1b601791840191820152835161219281602884016020880161182d565b01602801949350505050565b634e487b7160e01b600052602160045260246000fd5b80820281158282048414176104d0576104d0611c7b565b634e487b7160e01b600052603260045260246000fd5b6000816121f0576121f0611c7b565b50600019019056fea2646970667358221220bc29d1f41dc051b4bc746d137deba22e559a327bf95a8ad8cb1bf5cbf7a6a26f64736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "_domainSeparatorV4()": {
+        "details": "Returns the domain separator for the current chain."
+      },
+      "createMessage(address,address,uint256,uint256,address,uint256,uint256)": {
+        "details": "The RPC server uses this view function to create the ownership proof",
+        "params": {
+          "authorizer": "the address that currently owns the L1 NFT",
+          "nftChainId": "the chainId for the nftContract",
+          "nftContract": "the contract address for the NFT being utilized",
+          "nonce": "the meta-transaction nonce for account",
+          "signer": "the address that currently owns the L1 NFT",
+          "timestamp": "the timestamp from the OffchainLookup error",
+          "tokenId": "the tokenId from nftContract for the NFT being utilized"
+        },
+        "returns": {
+          "_0": "the message _ownershipSigner should sign"
+        }
+      },
+      "executeWithProof(bytes,bytes)": {
+        "details": "The RPC call and re-submission should be handled by your Relayer client",
+        "params": {
+          "extraData": "The unaltered bytes from OffchainLookup::extraData",
+          "response": "The unaltered bytes reponse from a call made to an RPC url from OffchainLookup::urls"
+        }
+      },
+      "getRoleAdmin(bytes32)": {
+        "details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
+      },
+      "grantRole(bytes32,address)": {
+        "details": "Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event."
+      },
+      "hasRole(bytes32,address)": {
+        "details": "Returns `true` if `account` has been granted `role`."
+      },
+      "ownershipSigner()": {
+        "returns": {
+          "_0": "the ownership proof signer address"
+        }
+      },
+      "preflight((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes)": {
+        "details": "Per EIP-3668, a valid signature will cause a revert with useful error params."
+      },
+      "renounceRole(bytes32,address)": {
+        "details": "Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event."
+      },
+      "revokeRole(bytes32,address)": {
+        "details": "Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event."
+      },
+      "supportsInterface(bytes4)": {
+        "details": "See {IERC165-supportsInterface}."
+      },
+      "verify((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes)": {
+        "details": "Useful for transactions where the signer is not using a specific NFT, but values are still required in the signature - use the zero address for nftContract and 0 for tokenId"
+      },
+      "verifyOwnershipProof((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes,uint256)": {
+        "details": "Ensures that _ownershipSigner signed a message containing (nftOwner OR authorized address, nonce, nftContract, tokenId)",
+        "params": {
+          "req": "structured data submitted by EOA making a meta-transaction request",
+          "signature": "the signature proof created by the ownership signer EOA"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "createMessage(address,address,uint256,uint256,address,uint256,uint256)": {
+        "notice": "Construct message that _ownershipSigner must sign as ownership proof"
+      },
+      "createSession(address)": {
+        "notice": "Allow `authorized` to use your NFTs in a game for `length` seconds. Your NFTs         will not be held in custody or approved for transfer."
+      },
+      "executeWithProof(bytes,bytes)": {
+        "notice": "Re-submit a valid meta-tx request with trust-minimized proof to execute the transaction."
+      },
+      "getNonce(address)": {
+        "notice": "Get current nonce for EOA"
+      },
+      "isAuthorized(address,address)": {
+        "notice": "Get current session for Primary EOA"
+      },
+      "ownershipSigner()": {
+        "notice": "Get ownershipSigner address"
+      },
+      "preflight((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes)": {
+        "notice": "Submit a meta-tx request and signature to check validity and receive a response with data useful for fetching a trusted proof per EIP-3668."
+      },
+      "setDelegationRegistry(address)": {
+        "notice": "Change the Delegation source"
+      },
+      "setOwnershipSigner(address)": {
+        "notice": "Change the ownership signer"
+      },
+      "verify((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes)": {
+        "notice": "Submit a meta-tx request where a proof of ownership is not required."
+      },
+      "verifyOwnershipProof((address,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,bytes),bytes,uint256)": {
+        "notice": "Verify signed OffchainLookup proof against meta-tx request data"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 2359,
+        "contract": "src/GlobalEntryForwarder/GlobalEntryForwarder.sol:GlobalEntryForwarder",
+        "label": "_roles",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_bytes32,t_struct(RoleData)2354_storage)"
+      },
+      {
+        "astId": 2226,
+        "contract": "src/GlobalEntryForwarder/GlobalEntryForwarder.sol:GlobalEntryForwarder",
+        "label": "_ownershipSigner",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 1469,
+        "contract": "src/GlobalEntryForwarder/GlobalEntryForwarder.sol:GlobalEntryForwarder",
+        "label": "_nonces",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 1472,
+        "contract": "src/GlobalEntryForwarder/GlobalEntryForwarder.sol:GlobalEntryForwarder",
+        "label": "urls",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_array(t_string_storage)dyn_storage"
+      },
+      {
+        "astId": 1475,
+        "contract": "src/GlobalEntryForwarder/GlobalEntryForwarder.sol:GlobalEntryForwarder",
+        "label": "DelegationRegistry",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_contract(IDelegationRegistry)2170"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_string_storage)dyn_storage": {
+        "base": "t_string_storage",
+        "encoding": "dynamic_array",
+        "label": "string[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IDelegationRegistry)2170": {
+        "encoding": "inplace",
+        "label": "contract IDelegationRegistry",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_mapping(t_bytes32,t_struct(RoleData)2354_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+        "numberOfBytes": "32",
+        "value": "t_struct(RoleData)2354_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(RoleData)2354_storage": {
+        "encoding": "inplace",
+        "label": "struct AccessControl.RoleData",
+        "members": [
+          {
+            "astId": 2351,
+            "contract": "src/GlobalEntryForwarder/GlobalEntryForwarder.sol:GlobalEntryForwarder",
+            "label": "members",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_bool)"
+          },
+          {
+            "astId": 2353,
+            "contract": "src/GlobalEntryForwarder/GlobalEntryForwarder.sol:GlobalEntryForwarder",
+            "label": "adminRole",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

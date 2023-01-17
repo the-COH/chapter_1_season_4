@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "scripts": {
+    "lint:fix": "yarn workspaces run lint:fix && cd ./autotask && yarn lint:fix"
+  },
+  "workspaces": ["contracts", "dapp"]
+}
