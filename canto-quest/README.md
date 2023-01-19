@@ -7,19 +7,21 @@ Canto.Quest is a outstanding Canto-native web3 quest and event platform to empow
 
 ## Product
 
-- Smart contract: Transparency
-  - Deposit payout to create quests
-  - Payout rewards for Questers 
 
 - Mobile App: Android and IOS
+  -  Connect Wallet
+  -  Quest Pool
   -  Join quests
   -  Mini game
   -  Reward ($CANTO, Special Box, Voucher,... )
-  -  Wallet, NFT marketplace,...
+  -  NFT marketplace,...
 
-- Client Web Service: 
+- Client Web Service:
+  - Connect wallet
   - Create community
-  - Create social quest, events, ...
+  - Create quests: offchain quests, onchain quests, web3 events,...
+  - Deposit payout to smart contract
+  - Automatic Payment (First come First serve or lucky draw)
 
 ## Tech Stack
 Solidity | Flutter | Nodejs | Typescript
