@@ -13,8 +13,8 @@ Canto.Quest is a outstanding Canto-native web3 quest and event platform to empow
   -  Quest Pool
   -  Join quests
   -  Mini game
-  -  Reward ($CANTO, Special Box, Voucher,... )
-  -  NFT marketplace,...
+  -  Reward ($CANTO, NFT )
+  -  Marketplace,...
 
 - Client Web Service:
   - Connect wallet
