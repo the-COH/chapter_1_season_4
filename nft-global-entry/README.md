@@ -3,6 +3,10 @@
 
 ## Bringing crosschain NFT token gating to Canto
 
+<a href="https://www.loom.com/share/344abe62b72a42fdafddaab060dcd48a">
+    <img style="max-width:600px;" src="https://cdn.loom.com/sessions/thumbnails/344abe62b72a42fdafddaab060dcd48a-with-play.gif">
+</a>
+
 NFT Global Entry allows developers to build contracts that authorize NFT ownership from other chains.
 
 Offchain services often use the term **token-gating** to describe this NFT ownership authorization.
