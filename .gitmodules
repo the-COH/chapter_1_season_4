@@ -1,6 +1,0 @@
-[submodule "motorchef"]
-	path = motorchef
-	url = git@github.com:CantoInu/motorchef.git
-[submodule "motorchef-www"]
-	path = motorchef-www
-	url = git@github.com:CantoInu/motorchef-www.git
