@@ -10,7 +10,7 @@ Chapter 1: Season 4
 In the repo as pptx
   
 #### Video  
-Guidelines https://form.jotform.com/223616580721151  
+https://youtu.be/u_FOZnNRNi4
 
 #### Whitepaper  
 In the repo
